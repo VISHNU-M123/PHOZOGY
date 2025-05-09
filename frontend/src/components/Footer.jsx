@@ -29,7 +29,7 @@ const Footer = () => {
             {/* Instagram section in footer */}
             <div className='mb-8'>
                 <h1 className='text-white text-[20px] font-[700]'>INSTAGRAM</h1>
-                <div className='flex gap-1 items-left mt-8'>
+                <div className='flex gap-1 mt-8'>
                     <img src={instaImgOne} alt="" className='h-18 w-auto' />
                     <img src={instaImgTwo} alt="" className='h-18 w-auto' />
                     <img src={instaImgThree} alt="" className='h-18 w-auto' />
