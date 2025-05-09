@@ -11,9 +11,9 @@ import { IoIosSend } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div>
-      <div className='bg-black  pt-16'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-8 lg:px-12 xl:max-w-7xl xl:mx-auto'>
+    <div className='bg-black'>
+      <div className='bg-black  pt-16 px-4 md:px-8 xl:max-w-7xl xl:mx-auto'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-10 gap-1'>
             {/* first section in footer */}
             <div className='mb-8'>
                 <img src={footerLogo} alt="" />
@@ -29,10 +29,10 @@ const Footer = () => {
             {/* Instagram section in footer */}
             <div className='mb-8'>
                 <h1 className='text-white text-[20px] font-[700]'>INSTAGRAM</h1>
-                <div className='flex gap-1 items-center mt-8'>
-                    <img src={instaImgOne} alt="" className='h-20 w-auto' />
-                    <img src={instaImgTwo} alt="" className='h-20 w-auto' />
-                    <img src={instaImgThree} alt="" className='h-20 w-auto' />
+                <div className='flex gap-1 items-left mt-8'>
+                    <img src={instaImgOne} alt="" className='h-18 w-auto' />
+                    <img src={instaImgTwo} alt="" className='h-18 w-auto' />
+                    <img src={instaImgThree} alt="" className='h-18 w-auto' />
                 </div>
             </div>
 
@@ -65,6 +65,12 @@ const Footer = () => {
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+
+        <div className='border-t border-t-[#181d1d] mt-12 pb-4'>
+            <div className='flex items-center justify-center py-8'>
+                <p className='text-[#666666] text-[15px]'>Copyright © 2025 All rights reserved</p>
             </div>
         </div>
       </div>
