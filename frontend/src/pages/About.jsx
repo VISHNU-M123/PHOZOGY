@@ -14,6 +14,12 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import contactImg from '../assets/cta-bg.jpg'
+import clientOne from '../assets/client-1.jpg'
+import clientTwo from '../assets/client-2.jpg'
+import clientThree from '../assets/client-3.jpg'
+import clientFour from '../assets/client-4.jpg'
+import quoteImg from '../assets/quote.png'
 
 const About = () => {
   return (
@@ -156,6 +162,106 @@ const About = () => {
                             <FaYoutube color='#666666' size={15} />
                             <FaInstagram color='#666666' size={15} />
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div>
+        <div className='py-36 px-4 flex items-center justify-center bg-cover bg-center bg-no-repeat' style={{backgroundImage: `url(${contactImg})`}}>
+            <div className='max-w-7xl flex flex-col items-center justify-center'>
+                <h1 className='text-white text-[50px] font-[700] mb-3 text-center leading-[60px]'>WANNA PROMOTE YOUR BRAND?</h1>
+                <p className='text-white text-[17px] font-[400] mb-7 text-center leading-[30px] md:px-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <br /> magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas.</p>
+                <button className='bg-green-600 text-white text-[16px] font-[700] py-[14px] px-[30px]'>CONTACT US</button>
+            </div>
+        </div>
+      </div>
+
+      <div>
+        <div className='pt-24 px-4'>
+            <div className='text-center mb-14'>
+                <h1 className='text-[#111111] font-[700] text-[36px] mb-4 leading-[43px]'>WHAT CLIENT SAY?</h1>
+                <p className='text-[#666666] font-[400] text-[15px] mb-4 leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br /> tempor incididunt ut labore et dolore.</p>
+            </div>
+        </div>
+      </div>
+
+      <div>
+        {/* main div */}
+        <div className='sm:px-5 lg:px-8 xl:max-w-7xl xl:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-[70px]'>
+            {/* first container */}
+            <div className='px-3'>
+                <div className='relative'>
+                    <img src={quoteImg} className='absolute -top-2.5 bg-white w-5 h-auto left-0' alt="" />
+                    <div className='pt-8 mb-8 border-t-[#e1e1e1] border-t-4'>
+                        <div className='flex items-center mb-5'>
+                            <div className='mr-6'>
+                                <img className='h-[90px] w-[90px] rounded-full' src={clientOne} alt="" />
+                            </div>
+                            <div>
+                                <h1 className='text-[#111111] text-[18px] font-[700] mb-[5px]'>ANDREW FILDER</h1>
+                                <p className='text-[#888888] text-[15px]'>@filder_muko</p>
+                            </div>
+                        </div>
+                        <p className='text-[#444444] text-[15px] font-[400]'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* second container */}
+            <div className='px-3'>
+                <div className='relative'>
+                    <img src={quoteImg} className='absolute -top-2.5 bg-white w-5 h-auto left-0' alt="" />
+                    <div className='pt-8 mb-8 border-t-[#e1e1e1] border-t-4'>
+                        <div className='flex items-center mb-5'>
+                            <div className='mr-6'>
+                                <img className='h-[90px] w-[90px] rounded-full' src={clientTwo} alt="" />
+                            </div>
+                            <div>
+                                <h1 className='text-[#111111] text-[18px] font-[700] mb-[5px]'>DAVID GUETTA</h1>
+                                <p className='text-[#888888] text-[15px]'>@filder_muko</p>
+                            </div>
+                        </div>
+                        <p className='text-[#444444] text-[15px] font-[400]'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* third container */}
+            <div className='px-3'>
+                <div className='relative'>
+                    <img src={quoteImg} className='absolute -top-2.5 bg-white w-5 h-auto left-0' alt="" />
+                    <div className='pt-8 mb-8 border-t-[#e1e1e1] border-t-4'>
+                        <div className='flex items-center mb-5'>
+                            <div className='mr-6'>
+                                <img className='h-[90px] w-[90px] rounded-full' src={clientThree} alt="" />
+                            </div>
+                            <div>
+                                <h1 className='text-[#111111] text-[18px] font-[700] mb-[5px]'>BEBE REXHA</h1>
+                                <p className='text-[#888888] text-[15px]'>@filder_muko</p>
+                            </div>
+                        </div>
+                        <p className='text-[#444444] text-[15px] font-[400]'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* fourth container */}
+            <div className='px-3'>
+                <div className='relative'>
+                    <img src={quoteImg} className='absolute -top-2.5 bg-white w-5 h-auto left-0' alt="" />
+                    <div className='pt-8 mb-8 border-t-[#e1e1e1] border-t-4'>
+                        <div className='flex items-center mb-5'>
+                            <div className='mr-6'>
+                                <img className='h-[90px] w-[90px] rounded-full' src={clientFour} alt="" />
+                            </div>
+                            <div>
+                                <h1 className='text-[#111111] text-[18px] font-[700] mb-[5px]'>ADAM LEVINE</h1>
+                                <p className='text-[#888888] text-[15px]'>@filder_muko</p>
+                            </div>
+                        </div>
+                        <p className='text-[#444444] text-[15px] font-[400]'>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                 </div>
             </div>
