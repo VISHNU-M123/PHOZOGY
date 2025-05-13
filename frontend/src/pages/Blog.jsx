@@ -35,11 +35,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>TYPOGRAPHY</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>WOMEN WERE PHOTOGRAPHY PIONEERS YET GENDER INEQUALITY PERSISTS IN THE...</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>WOMEN WERE PHOTOGRAPHY PIONEERS YET GENDER INEQUALITY PERSISTS IN THE...</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -52,11 +54,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>STOTIES</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>PHOTOGRAPHY IS MORE THAN A CASUAL HOBBY FOR GOPHERS WIDE RECEIVER...</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>PHOTOGRAPHY IS MORE THAN A CASUAL HOBBY FOR GOPHERS WIDE RECEIVER...</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -69,11 +73,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>GUIDES</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>5 TIPS FOR IMPROVING LOW LIGHT SMARTPHONE PHOTOGRAPHY</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>5 TIPS FOR IMPROVING LOW LIGHT SMARTPHONE PHOTOGRAPHY</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -86,11 +92,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>STOTIES</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>YOUR GUIDE TO FINDING CRAZY INSTAGRAM PHOTOGRAPHY HASHTAGS</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>YOUR GUIDE TO FINDING CRAZY INSTAGRAM PHOTOGRAPHY HASHTAGS</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -103,11 +111,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>TYPOGRAPHY</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>ST. PAUL PHOTOGRAPHER USES 1800 TECHNOLOGY TO CREATE STUNNING PORTRAITS</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>ST. PAUL PHOTOGRAPHER USES 1800 TECHNOLOGY TO CREATE STUNNING PORTRAITS</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -120,11 +130,13 @@ const Blog = () => {
                         </div>
                         <div className='pt-[30px] md:pt-0'>
                             <div className='text-white text-[12px] font-[600] bg-[#009603] py-[2px] px-[12px] w-fit'>GUIDES</div>
-                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px]'>INTERVIEW WITH WEDDING AND LANDSCAPE PHOTOGRAPHER ZACH NICHOLS | SLR LOUNGE...</h1>
-                            <ul className='mb-[14px] flex'>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>by <span className='text-[#111111]'>Admin</span></li>
-                                <li className='text-[#888888] text-[13px] mr-[24px]'>Aug, 15, 2019</li>
-                                <li className='text-[#888888] text-[13px] mr-0'>20 comment</li>
+                            <h1 className='mt-[20px] mb-[10px] text-[#111111] font-[700] text-[20px] leading-[27px] cursor-pointer'>INTERVIEW WITH WEDDING AND LANDSCAPE PHOTOGRAPHER ZACH NICHOLS | SLR LOUNGE...</h1>
+                            <ul className='mb-[14px] flex items-center text-[13px] text-[#888888]'>
+                                <li className="flex items-center mr-[14px]">by <span className='text-[#111111] ml-1'>Admin</span></li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-[14px]">Aug, 15, 2019</li>
+                                <li className="w-[1px] h-[14px] bg-[#e1e1e1] mr-[14px]"></li>
+                                <li className="mr-0">20 comment</li>
                             </ul>
                             <p className='text-[#444444] leading-[30px] text-[15px] font-[400] tracking-[0.5px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                         </div>
@@ -209,7 +221,7 @@ const Blog = () => {
                                 <form action="">
                                     <input className='text-[#444444] text-[13px] w-full pl-[15px] mb-[20px] h-[46px] border border-[#d7d7d7] outline-none' type="text" placeholder='Name' />
                                     <input className='text-[#444444] text-[13px] w-full pl-[15px] mb-[20px] h-[46px] border border-[#d7d7d7] outline-none' type="email" placeholder='Email' />
-                                    <button className='w-full text-[#ffffff] text-[15px] font-[700] tracking-[2px] bg-[#009603] pt-[14px] pb-[12px] px-[30px]'>SUBSCRIBE</button>
+                                    <button className='w-full text-[#ffffff] text-[15px] font-[700] tracking-[2px] bg-[#009603] pt-[14px] pb-[12px] px-[30px] cursor-pointer'>SUBSCRIBE</button>
                                 </form>
                             </div>
                         </div>
