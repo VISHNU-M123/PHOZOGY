@@ -7,6 +7,8 @@ import Services from './pages/Services'
 import Pricing from './pages/Pricing'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
+import Gallery from './pages/Gallery'
+import PortfolioDetails from './pages/PortfolioDetails'
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path='/pricing' element={<Pricing/>}/>
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/blog' element={<Blog/>}/>
+        <Route path='/gallery' element={<Gallery/>}/>
+        <Route path='/portfolio-details' element={<PortfolioDetails/>}/>
       </Routes>
     </div>
   )
