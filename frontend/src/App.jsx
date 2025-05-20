@@ -10,6 +10,7 @@ import Blog from './pages/Blog'
 import Gallery from './pages/Gallery'
 import PortfolioDetails from './pages/PortfolioDetails'
 import BlogDetails from './pages/BlogDetails'
+import Contact from './pages/Contact'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/gallery' element={<Gallery/>}/>
         <Route path='/portfolio-details' element={<PortfolioDetails/>}/>
         <Route path='/blog-details' element={<BlogDetails/>}/>
+        <Route path='/contact' element={<Contact/>} />
       </Routes>
     </div>
   )
