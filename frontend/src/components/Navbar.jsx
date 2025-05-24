@@ -3,11 +3,14 @@ import logo from '../assets/logo.png'
 import { CiSearch } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import {NavLink, useNavigate} from 'react-router-dom'
+import { MdOutlineArrowDropDown } from "react-icons/md";
+import { MdOutlineArrowRight } from "react-icons/md";
 
 
 const Navbar = () => {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobilePagesOpen, setMobilePagesOpen] = useState(false)
 
   const navigate = useNavigate()
   return (
@@ -105,26 +108,44 @@ const Navbar = () => {
           <div className='bg-[#111]'>
             <ul>
               <NavLink to='/'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Home</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Home</li>
               </NavLink>
               <NavLink to='/about'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>About</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>About</li>
               </NavLink>
               <NavLink to='/services'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Services</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Services</li>
               </NavLink>
               <NavLink to='/pricing'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Pricing</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Pricing</li>
               </NavLink>
               <NavLink to='/portfolio'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Portfolio</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Portfolio</li>
               </NavLink>
               <NavLink to='/blog'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Blog</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Blog</li>
               </NavLink>
-              <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Pages</li>
+              <li className='text-[#fff] text-[14px] font-[400]'>
+                <div className='flex items-center text-center py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] w-full transition-colors duration-300' onClick={() => setMobilePagesOpen(!mobilePagesOpen)}>
+                  Pages
+                  <span className='ml-[5px]'>{mobilePagesOpen ? (<MdOutlineArrowDropDown size={20} />) : (<MdOutlineArrowRight size={20} />)}</span>
+                </div>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobilePagesOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <ul>
+                      <NavLink to='/gallery'>
+                        <li className='text-[#ffffff] py-[8px] px-[30px] font-[400] hover:bg-[#009603] active:bg-[#009603]'>Gallery</li>
+                      </NavLink>
+                      <NavLink to='/portfolio-details'>
+                        <li className='text-[#ffffff] py-[8px] px-[30px] font-[400] hover:bg-[#009603] active:bg-[#009603]'>Portfolio Details</li>
+                      </NavLink>
+                      <NavLink to='/blog-details'>
+                        <li className='text-[#ffffff] py-[8px] px-[30px] font-[400] hover:bg-[#009603] active:bg-[#009603]'>Blog Details</li>
+                      </NavLink>
+                    </ul>
+                  </div>
+              </li>
               <NavLink to='/contact'>
-                <li className='py-[8px] px-[30px] cursor-pointer text-[#fff] text-[14px] font-[400]'>Contact</li>
+                <li className='py-[8px] px-[30px] cursor-pointer hover:bg-[#009603] active:bg-[#009603] text-[#fff] text-[14px] font-[400]'>Contact</li>
               </NavLink>
             </ul>
           </div>
