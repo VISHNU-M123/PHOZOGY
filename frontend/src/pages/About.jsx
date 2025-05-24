@@ -27,7 +27,7 @@ const About = () => {
       <Navbar/>
 
       <div>
-        <div className='grid grid-cols-1 xl:grid-cols-2'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 mt-[100px]'>
             {/* image section */}
             <div className="xl:relative">
                 <div className="xl:absolute xl:inset-0">
