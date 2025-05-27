@@ -44,15 +44,15 @@ const Home = () => {
 
   const slides = [
     {
-      title: 'PHOTOGRAPHY STUDIO',
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.",
-      button: "CONTACT US",
+      title: 'CAPTURE YOUR STORY',
+      desc: "Step into a world where every frame speaks. Our photography studio brings your moments to life with creativity, precision, and passion — whether it's portraits, weddings, or branded content.",
+      button: "BOOK A SESSION",
       image: firstCorousel
     },
     {
-      title: 'PHOTOGRAPHY STUDIO',
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.",
-      button: "CONTACT US",
+      title: 'EVERY SHOT, A MASTERPIECE',
+      desc: "From behind the lens to final edits, we deliver stunning visuals that reflect your style and vision. Experience professional photography and videography crafted to perfection.",
+      button: "LET’S CONNECT",
       image: secondCorousel
     }
   ]
@@ -69,27 +69,27 @@ const Home = () => {
 
   const categories = [
     {
-      title: 'ANIMAL',
+      title: 'WEDDINGS',
       image: categoryImgOne,
       count: '540 pictures',
     },
     {
-      title: 'NATURAL',
+      title: 'ENGAGEMENTS',
       image: categoryImgTwo,
       count: '120 pictures',
     },
     {
-      title: 'POTRAIT',
+      title: 'BRIDAL SHOWERS',
       image: categoryImgThree,
       count: '120 pictures',
     },
     {
-      title: 'ANIMAL',
+      title: 'HALDI CEREMONIES',
       image: categoryImgFour,
       count: '120 pictures',
     },
     {
-      title: 'ANIMAL',
+      title: 'BIRTHDAYS',
       image: categoryImgFive,
       count: '325 pictures',
     },
@@ -141,19 +141,19 @@ const Home = () => {
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 sm:px-8 lg:px-12 xl:max-w-7xl xl:mx-auto -mt-16 relative z-10'>
-        <ServicesCard title="SHOOTING" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida." image={shootingImg}/>
-        <ServicesCard title="VIDEOS" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida." image={videoImg}/>
-        <ServicesCard title="EDITING" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida." image={editingImg}/>
+        <ServicesCard title="PHOTOGRAPHY" description="Capturing timeless moments through stunning visuals. From portraits to events, we provide high-quality photography tailored to your unique story." image={shootingImg}/>
+        <ServicesCard title="VIDEOGRAPHY" description="Bring your vision to life with cinematic storytelling. We specialize in creating professional videos for weddings, promotions, and special moments." image={videoImg}/>
+        <ServicesCard title="EDITING" description="Enhance your visuals with expert post-production. Our editing services ensure every photo and video is polished, vibrant, and unforgettable." image={editingImg}/>
       </div>
 
       <div className='px-6 sm:px-8 lg:px-12 xl:max-w-7xl xl:mx-auto py-20'>
         <div className='flex flex-col md:flex-row justify-between md:items-center gap-10'>
           <div className='md:w-1/2'>
-            <h1 className='font-[700] text-[36px] text-[#111111]'>CATEGORIES</h1>
-            <p className='text-[#666666] text-[15px] leading-7 mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br /> eiusmod tempor incididunt ut labore et dolore.</p>
+            <h1 className='font-[700] text-[36px] text-[#111111] leading-tight'>EXPLORE BY CATEGORY</h1>
+            <p className='text-[#666666] text-[15px] leading-7 mt-2'>From engagements to haldi ceremonies, we capture every moment with style and heart. Explore our event categories to see the story unfold.</p>
           </div>
           <div>
-            <button className='bg-green-600 text-white py-3 px-8 font-semibold'>VIEW ALL</button>
+            <button className='bg-green-600 text-white py-3 px-8 font-semibold'>VIEW GALLERY</button>
           </div>
         </div>
       </div>
@@ -172,10 +172,10 @@ const Home = () => {
         <h1 className='text-center font-[700] text-[36px] text-[#111111]'>OUR LATEST WORKS</h1>
         <ul className="flex flex-wrap justify-center mt-4">
           <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>All</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Fashion</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Lifestyle</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Natural</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Wedding</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Weddings</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Engagements</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Bridal Showers</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Haldi</li>
           <li className='text-[#888888] text-[17px] px-1.5 md:px-6 '>Videos</li>
         </ul>
       </div>

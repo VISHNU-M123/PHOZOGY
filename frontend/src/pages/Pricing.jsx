@@ -9,7 +9,7 @@ const Pricing = () => {
 
       <div className='text-center px-3 mb-[110px] pt-[60px]'>
         <h1 className='text-[#111111] font-[700] text-[36px] mb-3 leading-[43px]'>SERVICE & OPTIMAL PRICE</h1>
-        <p className='text-[#666666] font-[400] text-[15px] mb-3 leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br /> eiusmod tempor incididunt ut labore et dolore.</p>
+        <p className='text-[#666666] font-[400] text-[15px] mb-3 leading-[26px]'>Discover our tailored photography services designed to meet your unique needs and budget. <br /> Quality and creativity at optimal prices to capture your most precious moments.</p>
       </div>
 
       <div>
@@ -116,21 +116,21 @@ const Pricing = () => {
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>01</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>FILMING AND EDITING</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From cinematic footage to seamless editing, we craft videos that tell powerful, visually engaging stories for your brand or personal moments.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>02</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>ENGAGEMENT PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Freeze your love story in time with beautiful, natural, and emotive engagement portraits that reflect your unique connection.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>03</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>COMMERCIAL PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Elevate your brand with bold, clean, and eye-catching imagery tailored for marketing, advertising, and business use.</p>
                 </div>
             </div>
 
@@ -140,21 +140,21 @@ const Pricing = () => {
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>04</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>SOCIAL MEDIA PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Create content that clicks. Our social-ready shoots are designed to engage followers and reflect your online identity with style.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>05</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>EVENT PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From corporate events to private celebrations, we capture the key moments with clarity, emotion, and energy.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>06</div>
                         <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>PERSONAL PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Portraits that tell your story. Whether for personal branding, lifestyle, or just memories, we help you look and feel your best.</p>
                 </div>
             </div>
         </div>

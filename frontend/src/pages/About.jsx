@@ -40,7 +40,7 @@ const About = () => {
                 <div className='bg-[#f5f5f5] pt-[50px] px-[30px] xl:px-[100px] pb-3'>
                     <div className='mb-[40px]'>
                         <h1 className='text-[#111111] font-[700] text-[36px] leading-[47px] mb-[30px]'>CAPTURING THE MOMENTS THAT CAPTIVATE YOUR HEART</h1>
-                        <p className='text-[#666666] font-[400] text-[15px] leading-[26px] mb-[15px]'>Lorem ipsum dolor sit amet, consectetur adipiscing, tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis. All these taglines are owned by their respective owners, and we do not have any copyright on them.</p>
+                        <p className='text-[#666666] font-[400] text-[15px] leading-[26px] mb-[15px]'>We believe every frame should speak to the soul. From the quiet glances to the loudest celebrations, our mission is to preserve your most heartfelt memories with authenticity, elegance, and a timeless touch.</p>
                     </div>
                     <div>
                         <div className='grid md:grid-cols-[1fr_7fr] xl:grid-cols-[0fr_7fr] mb-[50px]'>
@@ -49,7 +49,7 @@ const About = () => {
                             </div>
                             <div className='mt-6 md:mt-0'>
                                 <h1 className='text-[#111111] text-[20px] font-[700] mb-[8px]'>PROFESSIONALISM</h1>
-                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From preparation to delivery, we maintain the highest standards in every frame. You can expect timely communication, seamless coordination, and exceptional results.</p>
                             </div>
                         </div>
 
@@ -59,7 +59,7 @@ const About = () => {
                             </div>
                             <div className='mt-6 md:mt-0'>
                                 <h1 className='text-[#111111] text-[20px] font-[700] mb-[8px]'>INDIVIDUAL APPROACH</h1>
-                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Every event is unique — and so is our approach. We take the time to understand your story, style, and vision to deliver photos that reflect you.</p>
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@ const About = () => {
                             </div>
                             <div className='mt-6 md:mt-0'>
                                 <h1 className='text-[#111111] text-[20px] font-[700] mb-[8px]'>FLEXIBLE SCHEDULE</h1>
-                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Whether it's an early morning shoot or a late-night celebration, we work around your schedule to make sure every important moment is captured.</p>
                             </div>
                         </div>
 
@@ -79,7 +79,7 @@ const About = () => {
                             </div>
                             <div className='mt-6 md:mt-0'>
                                 <h1 className='text-[#111111] text-[20px] font-[700] mb-[8px]'>EXPERIENCE</h1>
-                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>With years of experience in weddings and lifestyle shoots, we bring confidence, calm, and creativity to every project we undertake.</p>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const About = () => {
         <div className='flex flex-col md:flex-row justify-between md:items-center gap-10'>
           <div className='md:w-1/2'>
             <h1 className='font-[700] text-[36px] text-[#111111]'>OUR TEAM</h1>
-            <p className='text-[#666666] text-[15px] leading-7 mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <p className='text-[#666666] text-[15px] leading-7 mt-2'>Meet the passionate creatives behind the lens — a team dedicated to turning your special moments into timeless stories.</p>
           </div>
           <div>
             <button className='bg-green-600 text-white py-3 px-8 font-semibold'>APPOINTMENT</button>
@@ -172,7 +172,7 @@ const About = () => {
         <div className='py-36 px-4 flex items-center justify-center bg-cover bg-center bg-no-repeat' style={{backgroundImage: `url(${contactImg})`}}>
             <div className='max-w-7xl flex flex-col items-center justify-center'>
                 <h1 className='text-white text-[50px] font-[700] mb-3 text-center leading-[60px]'>WANNA PROMOTE YOUR BRAND?</h1>
-                <p className='text-white text-[17px] font-[400] mb-7 text-center leading-[30px] md:px-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <br /> magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas.</p>
+                <p className='text-white text-[17px] font-[400] mb-7 text-center leading-[30px] md:px-3'>Whether you're launching a product or building your brand, we create compelling visual stories that truly connect with your audience. <br /> Let’s craft meaningful content that stands out, inspires, and leaves a lasting impression.</p>
                 <button className='bg-green-600 text-white text-[16px] font-[700] py-[14px] px-[30px]'>CONTACT US</button>
             </div>
         </div>
@@ -182,7 +182,7 @@ const About = () => {
         <div className='pt-24 px-4'>
             <div className='text-center mb-14'>
                 <h1 className='text-[#111111] font-[700] text-[36px] mb-4 leading-[43px]'>WHAT CLIENT SAY?</h1>
-                <p className='text-[#666666] font-[400] text-[15px] mb-4 leading-[26px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br /> tempor incididunt ut labore et dolore.</p>
+                <p className='text-[#666666] font-[400] text-[15px] mb-4 leading-[26px]'>Hear from the people who trusted us to capture their most cherished moments. <br /> Their words reflect the passion we put into every frame.</p>
             </div>
         </div>
       </div>

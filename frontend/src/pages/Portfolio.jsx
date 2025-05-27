@@ -26,10 +26,10 @@ const Portfolio = () => {
         <h1 className='text-center font-[700] text-[36px] text-[#111111] leading-[44px]'>OUR LATEST WORKS</h1>
         <ul className="flex flex-wrap justify-center mt-4">
           <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>All</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Fashion</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Lifestyle</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Natural</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Wedding</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Weddings</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Engagements</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Bridal Showers</li>
+          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Haldi</li>
           <li className='text-[#888888] text-[17px] px-1.5 md:px-6 '>Videos</li>
         </ul>
       </div>

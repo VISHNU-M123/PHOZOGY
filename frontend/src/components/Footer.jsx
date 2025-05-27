@@ -17,7 +17,7 @@ const Footer = () => {
             {/* first section in footer */}
             <div className='mb-8'>
                 <img src={footerLogo} alt="" />
-                <p className='text-[#c4c4c4] mt-8'>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p className='text-[#c4c4c4] mt-8'>Capturing timeless memories across weddings, engagements, and celebrations — where every photo tells your story with heart and elegance.</p>
                 <div className='flex mt-5 gap-5'>
                     <FaFacebookF color='white' size={18} />
                     <FaTwitter color='white' size={18} />
@@ -56,7 +56,7 @@ const Footer = () => {
             {/* Subscribe section in footer */}
             <div className='mb-8'>
                 <h1 className='text-white text-[20px] font-[700]'>SUBSCRBE</h1>
-                <p className='text-[#c4c4c4] mt-8'>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <p className='text-[#c4c4c4] mt-8'>Subscribe to get updates on our latest shoots, exclusive offers, and behind-the-scenes moments from our studio.</p>
                 <div className='mt-5'>
                     <form action="">
                         <div className='flex'>

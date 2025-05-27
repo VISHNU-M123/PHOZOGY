@@ -27,7 +27,7 @@ const Contact = () => {
                 <div className='md:px-[15px]'>
                   <div>
                     <h1 className='text-[#111111] text-[30px] font-[700] mb-[15px]'>GET IN TOUCH</h1>
-                    <p className='text-[#111111] text-[15px] font-[400] leading-[26px] mb-[32px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p className='text-[#111111] text-[15px] font-[400] leading-[26px] mb-[32px]'>We always love to hear from you. Reach out anytime to discuss your ideas or ask any questions about our creative photography services.</p>
                     <div className='flex items-center mb-[30px]'>
                       <div className='flex items-center justify-center h-[80px] w-[80px] bg-[#009603] rounded-full text-[40px] leading-[80px] text-center text-[#ffffff] mr-[30px]'>
                         <FaMapMarkerAlt />
