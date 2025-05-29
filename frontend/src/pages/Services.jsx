@@ -23,23 +23,23 @@ const Services = () => {
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>01</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>FILMING AND EDITING</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>WEDDING PHOTOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From cinematic footage to seamless editing, we craft videos that tell powerful, visually engaging stories for your brand or personal moments.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Comprehensive wedding coverage capturing the ceremony, rituals, and candid emotions. Timeless portraits and candid storytelling that reflects your unique day.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>02</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>ENGAGEMENT PHOTOGRAPHY</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>ENGAGEMENT SHOOTS</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Freeze your love story in time with beautiful, natural, and emotive engagement portraits that reflect your unique connection.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Beautiful pre-wedding portraits at chosen locations that celebrate your love story. Ideal for invites, social media, or just lasting memories.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>03</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>COMMERCIAL PHOTOGRAPHY</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>BRIDAL SHOWERS & HALDI</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Elevate your brand with bold, clean, and eye-catching imagery tailored for marketing, advertising, and business use.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Vibrant and joy-filled captures of your bridal showers, haldi, mehendi, and other pre-wedding ceremonies — focusing on culture, color, and emotion.</p>
                 </div>
             </div>
 
@@ -47,23 +47,23 @@ const Services = () => {
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>04</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>SOCIAL MEDIA PHOTOGRAPHY</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>EVENT VIDEOGRAPHY</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Create content that clicks. Our social-ready shoots are designed to engage followers and reflect your online identity with style.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Create cinematic memories of your special events. From highlight reels to full-length edits, we bring energy, emotion, and story to your videos.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>05</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>EVENT PHOTOGRAPHY</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>BIRTHDAY & FUNCTION COVERAGE</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From corporate events to private celebrations, we capture the key moments with clarity, emotion, and energy.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>From kids’ birthdays to milestone celebrations, we cover every laugh, surprise, and joy-filled moment with care and creativity.</p>
                 </div>
                 <div className='mb-[42px]'>
                     <div className='flex mb-[12px]'>
                         <div className='bg-[#009603] text-white text-[16px] font-[600] h-[36px] w-[36px] text-center flex items-center justify-center mr-[20px]'>06</div>
-                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>PERSONAL PHOTOGRAPHY</h1>
+                        <h1 className='text-[#111111] text-[20px] font-[700] leading-[36px]'>CUSTOM SHOOTS</h1>
                     </div>
-                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Portraits that tell your story. Whether for personal branding, lifestyle, or just memories, we help you look and feel your best.</p>
+                    <p className='text-[#666666] text-[15px] font-[400] leading-[26px]'>Have a unique idea in mind? Whether it's a personal shoot, couple session, or something entirely different, we’re here to bring your vision to life.</p>
                 </div>
             </div>
         </div>
