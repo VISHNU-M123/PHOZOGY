@@ -1,12 +1,21 @@
-import React from 'react'
-import Sidebar from '../components/Sidebar'
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 
 const Dashboard = () => {
   return (
     <div>
-      <Sidebar/>
-    </div>
-  )
-}
+      <div className="flex">
+        <Sidebar />
+        <div>
+          <Navbar/>
+          <div>
 
-export default Dashboard
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

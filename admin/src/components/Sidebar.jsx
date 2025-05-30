@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import logo from '../assets/logo.svg'
 import logo_mini from '../assets/logo-mini.svg'
 import profileIcon from '../assets/face15.jpg'
@@ -16,6 +16,19 @@ import { MdOutlineSecurity } from "react-icons/md";
 import { BiSolidFile } from "react-icons/bi";
 
 const Sidebar = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event){
+            if(menuRef.current && !menuRef.current.contains(event.target)){
+                setIsOpen(false)
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside)
+    },[])
   return (
     <div>
         {/* nav */}
@@ -41,42 +54,48 @@ const Sidebar = () => {
                                 <p className='text-[12px] text-[#6c7293]'>Gold Member</p>
                             </div>
                         </div>
-                        <div className='relative'>
-                            <a href=""><BsThreeDotsVertical color='#6c7293' size={20} /></a>
-                            <div className='absolute bg-[#191c24] min-w-[200px] mt-2 rounded-sm shadow-lg border border-[rgba(0,0,0,0.15)] z-10 top-full left-0'>
-                                <a href="" className='flex items-center py-[11px] px-[13px]'>
-                                    <div>
-                                        <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
-                                            <IoMdSettings className='text-blue-500' size={14} />
-                                        </div>
+                        <div className='relative' ref={menuRef}>
+                            <button className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
+                                <BsThreeDotsVertical color='#6c7293' size={20} />
+                            </button>
+                            {
+                                isOpen && (
+                                    <div className='absolute bg-[#191c24] min-w-[200px] mt-2 rounded-sm shadow-lg border border-[rgba(0,0,0,0.15)] z-10 top-full left-0'>
+                                        <a href="" className='flex items-center py-[11px] px-[13px]'>
+                                            <div>
+                                                <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
+                                                    <IoMdSettings className='text-blue-500' size={14} />
+                                                </div>
+                                            </div>
+                                            <div className='pl-[15px]'>
+                                                <p className='text-white text-[12px] mb-[4px]'>Account settings</p>
+                                            </div>
+                                        </a>
+                                        <div className='h-[1px] w-full bg-gray-700'></div>
+                                        <a href="" className='flex items-center py-[11px] px-[13px]'>
+                                            <div>
+                                                <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
+                                                    <AiOutlineInfoCircle className='text-violet-600' size={14} />
+                                                </div>
+                                            </div>
+                                            <div className='pl-[15px]'>
+                                                <p className='text-white text-[12px] mb-[4px]'>Change Password</p>
+                                            </div>
+                                        </a>
+                                        <div className='h-[1px] w-full bg-gray-700'></div>
+                                        <a href="" className='flex items-center py-[11px] px-[13px]'>
+                                            <div>
+                                                <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
+                                                    <FaCalendarDay className='text-green-500' size={14} />
+                                                </div>
+                                            </div>
+                                            <div className='pl-[15px]'>
+                                                <p className='text-white text-[12px] mb-[4px]'>To-do-list</p>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div className='pl-[15px]'>
-                                        <p className='text-white text-[12px] mb-[4px]'>Account settings</p>
-                                    </div>
-                                </a>
-                                <div className='h-[1px] w-full bg-gray-700'></div>
-                                <a href="" className='flex items-center py-[11px] px-[13px]'>
-                                    <div>
-                                        <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
-                                            <AiOutlineInfoCircle className='text-violet-600' size={14} />
-                                        </div>
-                                    </div>
-                                    <div className='pl-[15px]'>
-                                        <p className='text-white text-[12px] mb-[4px]'>Change Password</p>
-                                    </div>
-                                </a>
-                                <div className='h-[1px] w-full bg-gray-700'></div>
-                                <a href="" className='flex items-center py-[11px] px-[13px]'>
-                                    <div>
-                                        <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
-                                            <FaCalendarDay className='text-green-500' size={14} />
-                                        </div>
-                                    </div>
-                                    <div className='pl-[15px]'>
-                                        <p className='text-white text-[12px] mb-[4px]'>To-do-list</p>
-                                    </div>
-                                </a>
-                            </div>
+                                )
+                            }
                         </div>
                     </div>
                 </li>
