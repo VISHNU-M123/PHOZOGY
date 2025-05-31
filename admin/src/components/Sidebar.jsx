@@ -47,7 +47,7 @@ const Sidebar = () => {
                         <div className='flex items-center'>
                             <div className='relative'>
                                 <img src={profileIcon} alt="" className='w-[35px] h-[35px] rounded-full' />
-                                <span className='absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border border-2 border-[#2c2e33]'></span>
+                                <span className='absolute bottom-0 right-0 w-[10px] h-[10px] bg-green-500 rounded-full border-2 border-[#2c2e33]'></span>
                             </div>
                             <div className='ml-[16px]'>
                                 <h1 className='text-white text-[16px]'>Henry Klein</h1>
