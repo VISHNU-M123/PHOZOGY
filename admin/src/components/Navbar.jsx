@@ -18,7 +18,14 @@ import { MdLogout } from "react-icons/md";
 const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isEmailMsgOpen, setIsEmailMsgOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   const menuRef = useRef(null);
+  const emailMenuRef = useRef(null);
+  const notificationRef = useRef(null);
+  const profileRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(event){
@@ -30,26 +37,56 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   },[])
 
+  useEffect(() => {
+    function handleClickOutside(event){
+      if(emailMenuRef.current && !emailMenuRef.current.contains(event.target)){
+        setIsEmailMsgOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  },[])
+
+  useEffect(() => {
+    function handleClickOutside(event){
+      if(notificationRef.current && !notificationRef.current.contains(event.target)){
+        setIsNotificationOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  },[])
+
+  useEffect(() => {
+    function handleClickOutside(event){
+      if(profileRef.current && !profileRef.current.contains(event.target)){
+        setIsProfileOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  },[])
+
   return (
     <div className='bg-[#191c24]'>
       <div className='bg-[#191c24]'>
         {/* <img src={logo_mini} alt="" /> */}
       </div>
-      <div className='px-[15px] w-full h-[70px] flex items-stretch'>
-        <button className='text-[14px] h-[70px] self-center cursor-pointer'><MdOutlineMenu color='#6c7293' /></button>
-        <ul className='w-full flex items-center'>
+      <div className='px-[15px] w-full h-[70px] flex items-stretch flex-grow-1'>
+        <button className='text-[14px] h-[70px] self-center cursor-pointer px-[12px]'><MdOutlineMenu color='#6c7293' /></button>
+        <ul className='w-full flex items-center flex-row flex-1'>
           <li className='w-full'>
             <form action="" className='mx-[16px] text-[15px] py-[8px] text-white'>
-              <input type="text" className='bg-[#191c24] border border-[#2c2e33] outline-none rounded-[6px] px-[20px] pt-[13px] pb-[11px] text-[14px]' placeholder='Search products' />
+              <input type="text" className='bg-[#191c24] border border-[#2c2e33] outline-none rounded-[6px] px-[20px] pt-[13px] pb-[11px] text-[14px] w-3/4' placeholder='Search products' />
             </form>
           </li>
         </ul>
         <ul className='flex items-center'>
-          <li ref={menuRef}>
+          <li ref={menuRef} className='relative'>
             <button onClick={() => setIsOpen(!isOpen)} className='mx-[16px] bg-green-500 text-white px-[12px] py-[6px] text-[15px] rounded-[4px] cursor-pointer'>+ Create New Project</button>
             {
               isOpen && (
-                <div className='bg-[#191c24] absolute rounded-[4px] mt-0 top-[48px]'>
+                <div className='bg-[#191c24] absolute rounded-[4px] mt-0 top-[48px] left-auto right-0 shadow-[0px_0px_35px_-3px_rgb(0,0,0)]'>
                   <h1 className='p-[16px] text-[15px] font-[500] text-white'>Projects</h1>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
                   <a href="" className='flex items-center py-[11px] px-[13px]'>
@@ -95,129 +132,141 @@ const Navbar = () => {
               <IoGridSharp size={18} color='white' />
             </a>
           </li>
-          <li>
-            <a href="" className='relative mx-[16px] inline-block'>
+          <li ref={emailMenuRef}>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsEmailMsgOpen(!isEmailMsgOpen)}} className='relative mx-[16px] inline-block'>
               <MdEmail size={20} color='white' />
               <span className='absolute w-[7px] h-[7px] bg-green-500 top-0 right-0 rounded-full'></span>
             </a>
-            {/* <div className='absolute mt-0 top-[48px] rounded-[4px] bg-[#191c24]'>
-              <h1 className='p-[16px] text-[15px] font-[500] text-white'>Messages</h1>
-              <div className='h-[1px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
-                <div>
-                  <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
+            {
+              isEmailMsgOpen && (
+                <div className='absolute mt-0 top-[48px] rounded-[4px] bg-[#191c24]'>
+                  <h1 className='p-[16px] text-[15px] font-[500] text-white'>Messages</h1>
+                  <div className='h-[1px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
+                    <div>
+                      <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='text-[14px] mb-[4px] text-white'>Mark send you a message</p>
+                      <p className='text-[#6c7293] text-[14px]'>1 Minutes ago</p>
+                    </div>
+                  </a>
+                  <div className='h-[1px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
+                    <div>
+                      <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='text-[14px] mb-[4px] text-white'>Cregh send you a message</p>
+                      <p className='text-[#6c7293] text-[14px]'>15 Minutes ago</p>
+                    </div>
+                  </a>
+                  <div className='h-[1px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
+                    <div>
+                      <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='text-[14px] mb-[4px] text-white'>Profile picture updated</p>
+                      <p className='text-[#6c7293] text-[14px]'>18 Minutes ago</p>
+                    </div>
+                  </a>
+                  <div className='h-[1px] w-full bg-gray-700'></div>
+                  <p className='text-center p-[16px] text-white'>4 new messages</p>
                 </div>
-                <div className='pl-[15px]'>
-                  <p className='text-[14px] mb-[4px] text-white'>Mark send you a message</p>
-                  <p className='text-[#6c7293] text-[14px]'>1 Minutes ago</p>
-                </div>
-              </a>
-              <div className='h-[1px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
-                <div>
-                  <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
-                </div>
-                <div className='pl-[15px]'>
-                  <p className='text-[14px] mb-[4px] text-white'>Cregh send you a message</p>
-                  <p className='text-[#6c7293] text-[14px]'>15 Minutes ago</p>
-                </div>
-              </a>
-              <div className='h-[1px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
-                <div>
-                  <img src={faceImgOne} className='w-[40px] h-[40px] rounded-full' alt="" />
-                </div>
-                <div className='pl-[15px]'>
-                  <p className='text-[14px] mb-[4px] text-white'>Profile picture updated</p>
-                  <p className='text-[#6c7293] text-[14px]'>18 Minutes ago</p>
-                </div>
-              </a>
-              <div className='h-[1px] w-full bg-gray-700'></div>
-              <p className='text-center p-[16px] text-white'>4 new messages</p>
-            </div> */}
+              )
+            }
           </li>
-          <li>
-            <a href="" className='mx-[16px] relative inline-block'>
+          <li ref={notificationRef}>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsNotificationOpen(!isNotificationOpen)}} className='mx-[16px] relative inline-block'>
               <FaBell size={18} color='white' />
               <span className='absolute w-[7px] h-[7px] bg-red-500 top-0 right-0 rounded-full'></span>
             </a>
-            {/* <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
-              <h1 className='p-[16px] text-[15px] font-[500] text-white'>Notifications</h1>
-              <div className='h-[0.5px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center'>
-                <div className='relative'>
-                  <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
-                    <FaCalendarDay className='text-green-500 text-[17px]'/>
-                  </div>
+            {
+              isNotificationOpen && (
+                <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
+                  <h1 className='p-[16px] text-[15px] font-[500] text-white'>Notifications</h1>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center'>
+                    <div className='relative'>
+                      <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
+                        <FaCalendarDay className='text-green-500 text-[17px]'/>
+                      </div>
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='mb-[4px] text-white text-[14px]'>Event today</p>
+                      <p className='text-[#6c7293] text-[14px]'>Just a reminder that you have an event today</p>
+                    </div>
+                  </a>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center'>
+                    <div className='relative'>
+                      <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
+                        <IoMdSettings className='text-red-500 text-[17px]'/>
+                      </div>
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='mb-[4px] text-white text-[14px]'>Settings</p>
+                      <p className='text-[#6c7293] text-[14px]'>Update dashboard</p>
+                    </div>
+                  </a>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center'>
+                    <div className='relative'>
+                      <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
+                        <FaLink className='text-yellow-500 text-[17px]' />
+                      </div>
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='mb-[4px] text-white text-[14px]'>Launch Admin</p>
+                      <p className='text-[#6c7293] text-[14px]'>New admin wow!</p>
+                    </div>
+                  </a>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <p className='p-[16px] text-[14px] text-center text-white'>See all notifications</p>
                 </div>
-                <div className='pl-[15px]'>
-                  <p className='mb-[4px] text-white text-[14px]'>Event today</p>
-                  <p className='text-[#6c7293] text-[14px]'>Just a reminder that you have an event today</p>
-                </div>
-              </a>
-              <div className='h-[0.5px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center'>
-                <div className='relative'>
-                  <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
-                    <IoMdSettings className='text-red-500 text-[17px]'/>
-                  </div>
-                </div>
-                <div className='pl-[15px]'>
-                  <p className='mb-[4px] text-white text-[14px]'>Settings</p>
-                  <p className='text-[#6c7293] text-[14px]'>Update dashboard</p>
-                </div>
-              </a>
-              <div className='h-[0.5px] w-full bg-gray-700'></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center'>
-                <div className='relative'>
-                  <div className='w-[40px] h-[40px] bg-black flex items-center justify-center rounded-full'>
-                    <FaLink className='text-yellow-500 text-[17px]' />
-                  </div>
-                </div>
-                <div className='pl-[15px]'>
-                  <p className='mb-[4px] text-white text-[14px]'>Launch Admin</p>
-                  <p className='text-[#6c7293] text-[14px]'>New admin wow!</p>
-                </div>
-              </a>
-              <div className='h-[0.5px] w-full bg-gray-700'></div>
-              <p className='p-[16px] text-[14px] text-center text-white'>See all notifications</p>
-            </div> */}
+              )
+            }
           </li>
-          <li>
-            <a href="" className='mx-[16px] py-[8px] relative inline-block'>
+          <li ref={profileRef} className='relative'>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsProfileOpen(!isProfileOpen)}} className='mx-[16px] py-[8px] relative inline-block whitespace-nowrap'>
               <div className='flex items-center'>
                 <img src={profileIcon} alt="" className='h-[35px] w-[35px] rounded-full' />
-                <p className='ml-[16px] text-[14px]'>Henry Klein</p>
+                <p className='ml-[16px] text-[14px] text-white whitespace-nowrap'>Henry Klein</p>
                 <IoMdArrowDropdown className='text-[#a7afb7] text-[18px]' />
               </div>
             </a>
-            <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
-              <h1 className='p-[16px] text-[15px] font-[500] text-white'>Profile</h1>
-              <div></div>
-              <a href="" className='py-[11px] px-[13px] flex items-center'>
-                <div className='relative'>
-                  <div className='w-[40px] h-[40px] flex items-center justify-center bg-black'>
-                    <IoMdSettings className='text-green-500 text-[17px]'/>
-                  </div>
+            {
+              isProfileOpen && (
+                <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
+                  <h1 className='p-[16px] text-[15px] font-[500] text-white'>Profile</h1>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center'>
+                    <div className='relative'>
+                      <div className='w-[40px] h-[40px] flex items-center justify-center bg-black rounded-full'>
+                        <IoMdSettings className='text-green-500 text-[17px]'/>
+                      </div>
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='mb-[4px] text-[14px] text-white'>Settings</p>
+                    </div>
+                  </a>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <a href="" className='py-[11px] px-[13px] flex items-center'>
+                    <div className='relative'>
+                      <div className='w-[40px] h-[40px] flex items-center justify-center bg-black rounded-full'>
+                        <MdLogout className='text-red-500 text-[17px]' />
+                      </div>
+                    </div>
+                    <div className='pl-[15px]'>
+                      <p className='mb-[4px] text-[14px] text-white'>Logout</p>
+                    </div>
+                  </a>
+                  <div className='h-[0.5px] w-full bg-gray-700'></div>
+                  <p className='p-[16px] text-center text-[14px] text-white'>Advanced settings</p>
                 </div>
-                <div className='pl-[15px]'>
-                  <p className='mb-[4px] text-[14px] text-white'>Settings</p>
-                </div>
-              </a>
-              <div></div>
-              <a href="">
-                <div>
-                  <div>
-                    <MdLogout />
-                  </div>
-                </div>
-                <div>
-                  <p>Logout</p>
-                </div>
-              </a>
-              <div></div>
-              <p>Advanced settings</p>
-            </div>
+              )
+            }
           </li>
         </ul>
         <button></button>
