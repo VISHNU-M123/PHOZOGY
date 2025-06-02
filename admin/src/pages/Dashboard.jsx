@@ -6,7 +6,9 @@ const Dashboard = () => {
   return (
     <div>
       <div className="flex">
-        <Sidebar />
+        <div className="hidden lg:block">
+          <Sidebar />
+        </div>
         <div className="w-full">
           <Navbar/>
           <div>

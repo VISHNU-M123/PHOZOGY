@@ -14,6 +14,7 @@ import { FaLink } from "react-icons/fa6";
 import { IoMdArrowDropdown } from "react-icons/io";
 import profileIcon from '../assets/face15.jpg'
 import { MdLogout } from "react-icons/md";
+import { MdFormatLineSpacing } from "react-icons/md";
 
 const Navbar = () => {
 
@@ -68,25 +69,27 @@ const Navbar = () => {
   },[])
 
   return (
-    <div className='bg-[#191c24]'>
-      <div className='bg-[#191c24]'>
-        {/* <img src={logo_mini} alt="" /> */}
+    <div className='bg-[#191c24] flex flex-row'>
+      <div className='bg-[#191c24] flex items-center lg:hidden w-[75px]'>
+        <a href="" className='pl-[20px]'>
+          <img src={logo_mini} alt="" className='[width:calc(70px-50px)] max-w-full h-[28px] m-auto' />
+        </a>
       </div>
       <div className='px-[15px] w-full h-[70px] flex items-stretch flex-grow-1'>
-        <button className='text-[14px] h-[70px] self-center cursor-pointer px-[12px]'><MdOutlineMenu color='#6c7293' /></button>
+        <button className='text-[14px] h-[70px] self-center cursor-pointer px-[12px] hidden lg:block'><MdOutlineMenu color='#6c7293' /></button>
         <ul className='w-full flex items-center flex-row flex-1'>
           <li className='w-full'>
-            <form action="" className='mx-[16px] text-[15px] py-[8px] text-white'>
+            <form action="" className='mx-[16px] text-[15px] py-[8px] text-white hidden lg:block'>
               <input type="text" className='bg-[#191c24] border border-[#2c2e33] outline-none rounded-[6px] px-[20px] pt-[13px] pb-[11px] text-[14px] w-3/4' placeholder='Search products' />
             </form>
           </li>
         </ul>
         <ul className='flex items-center'>
-          <li ref={menuRef} className='relative'>
-            <button onClick={() => setIsOpen(!isOpen)} className='mx-[16px] bg-green-500 text-white px-[12px] py-[6px] text-[15px] rounded-[4px] cursor-pointer'>+ Create New Project</button>
+          <li ref={menuRef} className='relative hidden lg:block'>
+            <button onClick={() => setIsOpen(!isOpen)} className={`mx-[16px] ${isOpen ? 'bg-green-500' : ''} text-white px-[12px] py-[6px] text-[15px] rounded-[4px] cursor-pointer`}>+ Create New Project</button>
             {
               isOpen && (
-                <div className='bg-[#191c24] absolute rounded-[4px] mt-0 top-[48px] left-auto right-0 shadow-[0px_0px_35px_-3px_rgb(0,0,0)]'>
+                <div className='bg-[#191c24] absolute rounded-[4px] min-w-[230px] mt-0 top-[48px] left-auto right-0 shadow-[0px_0px_35px_-3px_rgb(0,0,0)]'>
                   <h1 className='p-[16px] text-[15px] font-[500] text-white'>Projects</h1>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
                   <a href="" className='flex items-center py-[11px] px-[13px]'>
@@ -127,19 +130,19 @@ const Navbar = () => {
               )
             }
           </li>
-          <li>
+          <li className='hidden lg:block'>
             <a href="" className='mx-[16px] inline-block'>
               <IoGridSharp size={18} color='white' />
             </a>
           </li>
-          <li ref={emailMenuRef}>
-            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsEmailMsgOpen(!isEmailMsgOpen)}} className='relative mx-[16px] inline-block'>
+          <li ref={emailMenuRef} className='relative py-[8px]'>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsEmailMsgOpen(!isEmailMsgOpen)}} className='relative mx-[12px] md:mx-[16px] inline-block'>
               <MdEmail size={20} color='white' />
               <span className='absolute w-[7px] h-[7px] bg-green-500 top-0 right-0 rounded-full'></span>
             </a>
             {
               isEmailMsgOpen && (
-                <div className='absolute mt-0 top-[48px] rounded-[4px] bg-[#191c24]'>
+                <div className='absolute mt-0 top-[48px] left-auto right-0 rounded-[4px] bg-[#191c24] shadow-[0px_0px_35px_-3px_rgb(0,0,0)] min-w-[250px]'>
                   <h1 className='p-[16px] text-[15px] font-[500] text-white'>Messages</h1>
                   <div className='h-[1px] w-full bg-gray-700'></div>
                   <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
@@ -177,14 +180,14 @@ const Navbar = () => {
               )
             }
           </li>
-          <li ref={notificationRef}>
-            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsNotificationOpen(!isNotificationOpen)}} className='mx-[16px] relative inline-block'>
+          <li ref={notificationRef} className='relative py-[8px]'>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsNotificationOpen(!isNotificationOpen)}} className='mx-[12px] md:mx-[16px] relative inline-block'>
               <FaBell size={18} color='white' />
               <span className='absolute w-[7px] h-[7px] bg-red-500 top-0 right-0 rounded-full'></span>
             </a>
             {
               isNotificationOpen && (
-                <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
+                <div className='absolute mt-0 top-[48px] left-auto right-0 bg-[#191c24] rounded-[4px] shadow-[0px_0px_35px_-3px_rgb(0,0,0)] min-w-[280px]'>
                   <h1 className='p-[16px] text-[15px] font-[500] text-white'>Notifications</h1>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
                   <a href="" className='py-[11px] px-[13px] flex items-center'>
@@ -193,9 +196,9 @@ const Navbar = () => {
                         <FaCalendarDay className='text-green-500 text-[17px]'/>
                       </div>
                     </div>
-                    <div className='pl-[15px]'>
+                    <div className='pl-[15px] whitespace-nowrap'>
                       <p className='mb-[4px] text-white text-[14px]'>Event today</p>
-                      <p className='text-[#6c7293] text-[14px]'>Just a reminder that you have an event today</p>
+                      <p className='text-[#6c7293] text-[14px] max-w-[200px] overflow-hidden text-ellipsis'>Just a reminder that you have an event today</p>
                     </div>
                   </a>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
@@ -205,9 +208,9 @@ const Navbar = () => {
                         <IoMdSettings className='text-red-500 text-[17px]'/>
                       </div>
                     </div>
-                    <div className='pl-[15px]'>
+                    <div className='pl-[15px] whitespace-nowrap'>
                       <p className='mb-[4px] text-white text-[14px]'>Settings</p>
-                      <p className='text-[#6c7293] text-[14px]'>Update dashboard</p>
+                      <p className='text-[#6c7293] text-[14px] max-w-[200px] overflow-hidden text-ellipsis'>Update dashboard</p>
                     </div>
                   </a>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
@@ -217,9 +220,9 @@ const Navbar = () => {
                         <FaLink className='text-yellow-500 text-[17px]' />
                       </div>
                     </div>
-                    <div className='pl-[15px]'>
+                    <div className='pl-[15px] whitespace-nowrap'>
                       <p className='mb-[4px] text-white text-[14px]'>Launch Admin</p>
-                      <p className='text-[#6c7293] text-[14px]'>New admin wow!</p>
+                      <p className='text-[#6c7293] text-[14px] max-w-[200px] overflow-hidden text-ellipsis'>New admin wow!</p>
                     </div>
                   </a>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
@@ -229,16 +232,16 @@ const Navbar = () => {
             }
           </li>
           <li ref={profileRef} className='relative'>
-            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsProfileOpen(!isProfileOpen)}} className='mx-[16px] py-[8px] relative inline-block whitespace-nowrap'>
+            <a href="" onClick={(e) => {e.preventDefault(); e.stopPropagation(); setIsProfileOpen(!isProfileOpen)}} className='mx-[12px] md:mx-[16px] py-[8px] relative inline-block whitespace-nowrap'>
               <div className='flex items-center'>
                 <img src={profileIcon} alt="" className='h-[35px] w-[35px] rounded-full' />
-                <p className='ml-[16px] text-[14px] text-white whitespace-nowrap'>Henry Klein</p>
-                <IoMdArrowDropdown className='text-[#a7afb7] text-[18px]' />
+                <p className='ml-[16px] text-[14px] text-white whitespace-nowrap hidden md:block'>Henry Klein</p>
+                <IoMdArrowDropdown className='text-[#a7afb7] text-[18px] hidden md:block' />
               </div>
             </a>
             {
               isProfileOpen && (
-                <div className='absolute mt-0 top-[48px] bg-[#191c24] rounded-[4px]'>
+                <div className='absolute mt-0 top-[48px] left-auto right-0 bg-[#191c24] rounded-[4px] shadow-[0px_0px_35px_-3px_rgb(0,0,0)] min-w-[150px]'>
                   <h1 className='p-[16px] text-[15px] font-[500] text-white'>Profile</h1>
                   <div className='h-[0.5px] w-full bg-gray-700'></div>
                   <a href="" className='py-[11px] px-[13px] flex items-center'>
@@ -269,7 +272,11 @@ const Navbar = () => {
             }
           </li>
         </ul>
-        <button></button>
+        <button className='pl-[15px] pr-[11px] h-[70px] self-center lg:hidden'>
+          <span>
+            <MdFormatLineSpacing color='#6c7293' size={20} />
+          </span>
+        </button>
       </div>
     </div>
   )
