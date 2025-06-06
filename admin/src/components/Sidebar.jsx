@@ -15,7 +15,7 @@ import { MdContacts } from "react-icons/md";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BiSolidFile } from "react-icons/bi";
 
-const Sidebar = ({showItems}) => {
+const Sidebar = ({showItems, hideLogoSection = false}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
@@ -33,17 +33,21 @@ const Sidebar = ({showItems}) => {
     <div>
         {/* nav */}
         <div className={`bg-[#191c24] min-h-[calc(100vh-70px)] h-[100vh] ${showItems ? 'w-[244px]' : 'w-[70px]'} transition-all duration-300 ease-in-out`}>
-            <div className='w-[244px] h-[70px] bg-[#191c24] flex items-center transition-all duration-300'>
-                {showItems ? (
-                    <a href="" className='pl-[20px] transition-opacity duration-300 opacity-100'>
-                        <img src={logo} alt="" className='w-[calc(244px-120px)]' />
-                    </a>
-                ) : (
-                    <a href="" className='pl-[20px] transition-opacity duration-300 opacity-100'>
-                        <img src={logo_mini} alt="" className='w-[calc(70px-50px)]' />
-                    </a>
-                )}
-            </div>
+            {
+                !hideLogoSection && (
+                    <div className='w-[244px] h-[70px] bg-[#191c24] flex items-center transition-all duration-300'>
+                        {showItems ? (
+                            <a href="" className='pl-[20px] transition-opacity duration-300 opacity-100'>
+                                <img src={logo} alt="" className='w-[calc(244px-120px)]' />
+                            </a>
+                        ) : (
+                            <a href="" className='pl-[20px] transition-opacity duration-300 opacity-100'>
+                                <img src={logo_mini} alt="" className='w-[calc(70px-50px)]' />
+                            </a>
+                        )}
+                    </div>
+                )
+            }
             <ul className='mb-[60px]'>
                 <li>
                     <div className={`flex items-center py-[10px] ${showItems ? 'justify-between px-[20px]' : 'justify-center'}`}>
@@ -63,7 +67,7 @@ const Sidebar = ({showItems}) => {
                             </button>
                             {
                                 isOpen && (
-                                    <div className='absolute bg-[#191c24] min-w-[200px] mt-2 rounded-sm shadow-lg border border-[rgba(0,0,0,0.15)] z-10 top-full left-0'>
+                                    <div className='absolute bg-[#191c24] min-w-[200px] mt-2 rounded-sm shadow-lg border border-[rgba(0,0,0,0.15)] z-10 top-full lg:left-0 left-auto right-0'>
                                         <a href="" className='flex items-center py-[11px] px-[13px]'>
                                             <div>
                                                 <div className='w-[30px] h-[30px] bg-black rounded-full flex items-center justify-center'>
@@ -108,7 +112,8 @@ const Sidebar = ({showItems}) => {
                     </li>
                 )}
                 <li className={`${showItems ? 'pr-[20px]' : 'p-0'}`}>
-                    <a href="" className='flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0] bg-[#0f1015]'>
+                    <a href="" className='flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0] bg-[#0f1015] relative'>
+                        <div className='absolute left-0 top-0 bg-[#0090e7] w-[3px] h-full'></div>
                         <span className='w-[31px] h-[31px] bg-[#6c7293]/20 rounded-full flex items-center justify-center mr-[8px]'>
                             <MdOutlineSpeed className='text-[#8f5fe8]' />
                         </span>

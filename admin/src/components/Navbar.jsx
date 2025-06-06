@@ -88,8 +88,8 @@ const Navbar = ({toggleSidebarItems}) => {
         </ul>
         <ul className='flex items-center'>
           <li ref={menuRef} className='relative hidden lg:block'>
-            <button onClick={() => setIsOpen(!isOpen)} className={`mx-[16px] ${isOpen ? 'bg-green-500' : ''} text-white px-[12px] py-[6px] text-[15px] rounded-[4px] cursor-pointer`}>+ Create New Project</button>
-            <div className={`bg-[#191c24] absolute rounded-[4px] min-w-[230px] mt-0 top-[48px] left-auto right-0 shadow-[0px_0px_35px_-3px_rgb(0,0,0)] transition-all ease-in-out duration-300 ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+            <button onClick={() => setIsOpen(!isOpen)} className={`mx-[16px] ${isOpen ? 'bg-green-500' : ''} text-white px-[12px] py-[6px] text-[15px] rounded-[4px] hover:bg-green-500 cursor-pointer`}>+ Create New Project</button>
+            <div className={`bg-[#191c24] absolute rounded-[4px] min-w-[235px] mt-0 top-[48px] left-auto right-0 shadow-[0px_0px_35px_-3px_rgb(0,0,0)] transition-all ease-in-out duration-300 ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
               <h1 className='p-[16px] text-[15px] font-[500] text-white'>Projects</h1>
               <div className='h-[0.5px] w-full bg-gray-700'></div>
               <a href="" className='flex items-center py-[11px] px-[13px]'>
@@ -138,7 +138,7 @@ const Navbar = ({toggleSidebarItems}) => {
               <MdEmail size={20} color='white' />
               <span className='absolute w-[7px] h-[7px] bg-green-500 top-0 right-0 rounded-full'></span>
             </a>
-            <div className={`absolute mt-0 top-[48px] md:left-auto md:right-0 md:translate-x-0 left-1/2 -translate-x-1/2 max-w-[90vw] rounded-[4px] bg-[#191c24] shadow-[0px_0px_35px_-3px_rgb(0,0,0)] min-w-[250px] transition-all ease-in-out duration-300 ${isEmailMsgOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+            <div className={`absolute mt-0 top-[48px] md:left-auto md:right-0 md:translate-x-0 left-1/2 -translate-x-1/2 max-w-[90vw] rounded-[4px] bg-[#191c24] shadow-[0px_0px_35px_-3px_rgb(0,0,0)] min-w-[260px] transition-all ease-in-out duration-300 ${isEmailMsgOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
               <h1 className='p-[16px] text-[15px] font-[500] text-white'>Messages</h1>
               <div className='h-[1px] w-full bg-gray-700'></div>
               <a href="" className='py-[11px] px-[13px] flex items-center cursor-pointer'>
@@ -268,8 +268,8 @@ const Navbar = ({toggleSidebarItems}) => {
             <div className='fixed inset-0 z-40 lg:hidden' onClick={() => setIsMobileSidebarOpen(false)}></div>
           )
         }
-        <div className={`fixed top-0 right-0 h-full w-[244px] bg-[#191c24] -z-1 transition-transform duration-300 ease-in-out ${isMobileSidebarOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
-          <Sidebar showItems={true}/>
+        <div className={`fixed top-[70px] right-0 h-full w-[244px] bg-[#191c24] z-50 transition-transform duration-300 ease-in-out ${isMobileSidebarOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
+          <Sidebar showItems={true} hideLogoSection={true}/>
         </div>
       </div>
     </div>
