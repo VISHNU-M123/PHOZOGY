@@ -11,6 +11,17 @@ import { MdPieChart } from "react-icons/md";
 import { IoLogoCodepen } from "react-icons/io";
 import { MdCardTravel } from "react-icons/md";
 import { FiMonitor } from "react-icons/fi";
+import userOne from '../assets/face1.jpg'
+import userTwo from '../assets/face2.jpg'
+import userThree from '../assets/face5.jpg'
+import userFour from '../assets/face3.jpg'
+import userFive from '../assets/face4.jpg'
+import msgUserOne from '../assets/face6.jpg'
+import msgUserTwo from '../assets/face8.jpg'
+import msgUserThree from '../assets/face9.jpg'
+import msgUserFour from '../assets/face11.jpg'
+import { MdArrowBackIos } from "react-icons/md";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Dashboard = () => {
 
@@ -313,62 +324,275 @@ const Dashboard = () => {
 
               {/* fourth div */}
               <div>
-                <div>
-                  <div>
-                    <div>
-                      <h1>Order Status</h1>
-                      <div>
-                        <table>
+                <div className="mb-[24px] w-full">
+                  <div className="bg-[#191c24] rounded-[4px]">
+                    <div className="py-[28px] px-[25px]">
+                      <h1 className="text-white mb-[18px] text-[18px] font-[500]">Order Status</h1>
+                      <div className="overflow-x-auto">
+                        <table className="w-full table-fixed min-w-[1000px]">
                           <thead>
                             <tr>
-                              <th>
-                                <div>
-                                  <label htmlFor="">
-                                    <input type="text" />
+                              <th className="border-b border-b-[#2c2e33] p-[15px] w-[80px] align-middle">
+                                <div className="min-h-[18px] pl-[20px] relative">
+                                  <label htmlFor="" className="pl-[16px] text-[14px]">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
                                   </label>
                                 </div>
                               </th>
-                              <th>Client Name</th>
-                              <th>Order No</th>
-                              <th>Product Cost</th>
-                              <th>Project</th>
-                              <th>Payment Mode</th>
-                              <th>Start Date</th>
-                              <th>Payment Status</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Client Name</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Order No</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Product Cost</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Project</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Payment Mode</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Start Date</th>
+                              <th className="text-[#6c7293] text-[14px] font-[500] p-[15px] leading-none border-b border-b-[#2c2e33] align-middle text-left">Payment Status</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>
-                                <div>
-                                  <label htmlFor="">
-                                    <input type="text" />
+                              <td className="p-[15px] whitespace-nowrap leading-none align-middle border-b border-b-[#2c2e33]">
+                                <div className="min-h-[18px] pl-[20px] relative block m-0">
+                                  <label htmlFor="" className="block pl-[16px] text-[14px] leading-relaxed">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
                                   </label>
                                 </div>
                               </td>
-                              <td>
-                                <img src="" alt="" />
-                                <span>Henry Klein</span>
+                              <td className="p-[15px] align-middle leading-none whitespace-nowrap flex items-center border-b border-b-[#2c2e33]">
+                                <img src={userOne} className="w-[30px] h-[30px] rounded-full align-middle" alt="" />
+                                <span className="pl-[8px] text-[14px] leading-none text-white">Henry Klein</span>
                               </td>
-                              <td>02312</td>
-                              <td>$14,500</td>
-                              <td>Dashboard</td>
-                              <td>Credit card</td>
-                              <td>04 Dec 2019</td>
-                              <td>
-                                <div>Approved</div>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">02312</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">$14,500</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Dashboard</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Credit card</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">04 Dec 2019</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap border-b border-b-[#2c2e33]">
+                                <div className="border border-[#00d25b] text-[#00d25b] py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block">Approved</div>
                               </td>
                             </tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
+                            <tr>
+                              <td className="p-[15px] whitespace-nowrap leading-none align-middle border-b border-b-[#2c2e33]">
+                                <div className="min-h-[18px] pl-[20px] relative block m-0">
+                                  <label htmlFor="" className="block pl-[16px] text-[14px] leading-relaxed">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
+                                  </label>
+                                </div>
+                              </td>
+                              <td className="p-[15px] align-middle leading-none whitespace-nowrap flex items-center border-b border-b-[#2c2e33]">
+                                <img src={userTwo} className="w-[30px] h-[30px] rounded-full align-middle" alt="" />
+                                <span className="pl-[8px] text-[14px] leading-none text-white">Estella Bryan</span>
+                              </td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">02312</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">$14,500</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Website</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Cash on delivery</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">04 Dec 2019</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap border-b border-b-[#2c2e33]">
+                                <div className="border border-[#ffab00] text-[#ffab00] py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block">Pending</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-[15px] whitespace-nowrap leading-none align-middle border-b border-b-[#2c2e33]">
+                                <div className="min-h-[18px] pl-[20px] relative block m-0">
+                                  <label htmlFor="" className="block pl-[16px] text-[14px] leading-relaxed">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
+                                  </label>
+                                </div>
+                              </td>
+                              <td className="p-[15px] align-middle leading-none whitespace-nowrap flex items-center border-b border-b-[#2c2e33]">
+                                <img src={userThree} className="w-[30px] h-[30px] rounded-full align-middle" alt="" />
+                                <span className="pl-[8px] text-[14px] leading-none text-white">Lucy Abbott</span>
+                              </td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">02312</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">$14,500</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">App design</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Credit card</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">04 Dec 2019</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap border-b border-b-[#2c2e33]">
+                                <div className="border border-[#fc424a] text-[#fc424a] py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block">Rejected</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-[15px] whitespace-nowrap leading-none align-middle border-b border-b-[#2c2e33]">
+                                <div className="min-h-[18px] pl-[20px] relative block m-0">
+                                  <label htmlFor="" className="block pl-[16px] text-[14px] leading-relaxed">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
+                                  </label>
+                                </div>
+                              </td>
+                              <td className="p-[15px] align-middle leading-none whitespace-nowrap flex items-center border-b border-b-[#2c2e33]">
+                                <img src={userFour} className="w-[30px] h-[30px] rounded-full align-middle" alt="" />
+                                <span className="pl-[8px] text-[14px] leading-none text-white">Peter Gill</span>
+                              </td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">02312</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">$14,500</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Development</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Online payment</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">04 Dec 2019</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap border-b border-b-[#2c2e33]">
+                                <div className="border border-[#00d25b] text-[#00d25b] py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block">Approved</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td className="p-[15px] whitespace-nowrap leading-none align-middle border-b border-b-[#2c2e33]">
+                                <div className="min-h-[18px] pl-[20px] relative block m-0">
+                                  <label htmlFor="" className="block pl-[16px] text-[14px] leading-relaxed">
+                                    <input type="text" className="absolute top-0 left-0 ml-0 mt-0 cursor-pointer rounded-[2px] w-[16px] h-[16px] outline-none border-2 border-[#6c7293]" />
+                                  </label>
+                                </div>
+                              </td>
+                              <td className="p-[15px] align-middle leading-none whitespace-nowrap flex items-center border-b border-b-[#2c2e33]">
+                                <img src={userFive} className="w-[30px] h-[30px] rounded-full align-middle" alt="" />
+                                <span className="pl-[8px] text-[14px] leading-none text-white">Sallie Reyes</span>
+                              </td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">02312</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">$14,500</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Website</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">Credit card</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">04 Dec 2019</td>
+                              <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap border-b border-b-[#2c2e33]">
+                                <div className="border border-[#00d25b] text-[#00d25b] py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block">Approved</div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* fifth div */}
+              <div className="-mx-3">
+                <div className="mb-[24px] xl:w-4/12 md:w-6/12 px-3">
+                  <div className="w-full rounded-[4px] bg-[#191c24]">
+                    <div className="py-[28px] px-[25px]">
+                      <div className="flex justify-between">
+                        <h1 className="text-white mb-[18px] text-[18px] font-[500] leading-tight">Messages</h1>
+                        <p className="text-[#6c7293] mb-[4px] text-[14px]">View all</p>
+                      </div>
+                      <div>
+                        <div className="flex items-start py-[16px] border-b-[#2c2e33] border-b">
+                          <div className="relative">
+                            <img src={msgUserOne} className="w-[40px] h-[40px] rounded-full text-center flex items-center justify-center" alt="" />
+                          </div>
+                          <div className="pl-[15px] leading-none flex-grow-1">
+                            <div className="flex-grow-1">
+                              <div className="xl:flex xl:justify-between md:block lg:block flex justify-between">
+                                <h1 className="text-[15px] font-[500] mb-[8px] leading-tight text-white">Leonard</h1>
+                                <p className="text-[#6c7293] text-[12px] mb-[10px] leading-none">5 minutes ago</p>
+                              </div>
+                              <p className="mb-[10px] leading-none text-[#6c7293] text-[14px]">Well, it seems to be working now.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-start py-[16px] border-b-[#2c2e33] border-b">
+                          <div className="relative">
+                            <img src={msgUserTwo} className="w-[40px] h-[40px] rounded-full text-center flex items-center justify-center" alt="" />
+                          </div>
+                          <div className="pl-[15px] leading-none flex-grow-1">
+                            <div className="flex-grow-1">
+                              <div className="xl:flex xl:justify-between md:block lg:block flex justify-between">
+                                <h1 className="text-[15px] font-[500] mb-[8px] leading-tight text-white">Luella Mills</h1>
+                                <p className="text-[#6c7293] text-[12px] mb-[10px] leading-none">10 minutes ago</p>
+                              </div>
+                              <p className="mb-[10px] leading-none text-[#6c7293] text-[14px]">Well, it seems to be working now.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-start py-[16px] border-b-[#2c2e33] border-b">
+                          <div className="relative">
+                            <img src={msgUserThree} className="w-[40px] h-[40px] rounded-full text-center flex items-center justify-center" alt="" />
+                          </div>
+                          <div className="pl-[15px] leading-none flex-grow-1">
+                            <div className="flex-grow-1">
+                              <div className="xl:flex xl:justify-between md:block lg:block flex justify-between">
+                                <h1 className="text-[15px] font-[500] mb-[8px] leading-tight text-white">Ethel Kelly</h1>
+                                <p className="text-[#6c7293] text-[12px] mb-[10px] leading-none">2 Hours ago</p>
+                              </div>
+                              <p className="mb-[10px] leading-none text-[#6c7293] text-[14px]">Please review the tickets.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-start py-[16px] border-b-[#2c2e33] border-b">
+                          <div className="relative">
+                            <img src={msgUserFour} className="w-[40px] h-[40px] rounded-full text-center flex items-center justify-center" alt="" />
+                          </div>
+                          <div className="pl-[15px] leading-none flex-grow-1">
+                            <div className="flex-grow-1">
+                              <div className="xl:flex xl:justify-between md:block lg:block flex justify-between">
+                                <h1 className="text-[15px] font-[500] mb-[8px] leading-tight text-white">Herman May</h1>
+                                <p className="text-[#6c7293] text-[12px] mb-[10px] leading-none">4 Hours ago</p>
+                              </div>
+                              <p className="mb-[10px] leading-none text-[#6c7293] text-[14px]">Thanks a lot. It was easy to fix it.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <div>
+                      <h1>Portfolio Slide</h1>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                            <div>
+                              <div>
+                                <img src="" alt="" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <MdArrowBackIos />
+                          </div>
+                          <div>
+                            <MdArrowForwardIos />
+                          </div>
+                        </div>
+                        <div></div>
+                      </div>
+                      <div></div>
+                      <p></p>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+                <div></div>
               </div>
             </div>
           </div>
