@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import { GoArrowUpRight } from "react-icons/go";
@@ -22,14 +22,45 @@ import msgUserThree from '../assets/face9.jpg'
 import msgUserFour from '../assets/face11.jpg'
 import { MdArrowBackIos } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import dashSlideImgOne from '../assets/img_5.jpg'
+import dashSlideImgTwo from '../assets/img_6.jpg'
+import dashSlideImgThree from '../assets/Rectangle.jpg'
+import slideUserOne from '../assets/face12.jpg'
 
 const Dashboard = () => {
 
   const [showSidebarItems, setShowSidebarItems] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const toggleSidebarItems = () => {
     setShowSidebarItems(prev => !prev)
   }
+
+  const images = [
+    dashSlideImgOne,
+    dashSlideImgTwo,
+    dashSlideImgThree,
+    dashSlideImgOne,
+    dashSlideImgTwo,
+    dashSlideImgThree,
+    dashSlideImgOne,
+  ];
+
+  const totalSlides = images.length
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalSlides)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval)
+  },[])
+
   return (
     <div>
       <div className="flex">
@@ -463,9 +494,9 @@ const Dashboard = () => {
               </div>
 
               {/* fifth div */}
-              <div className="-mx-3">
-                <div className="mb-[24px] xl:w-4/12 md:w-6/12 px-3">
-                  <div className="w-full rounded-[4px] bg-[#191c24]">
+              <div className="-mx-3 flex flex-wrap">
+                <div className="mb-[24px] w-full xl:w-4/12 md:w-6/12 px-3">
+                  <div className="w-full rounded-[4px] bg-[#191c24] h-full flex flex-col">
                     <div className="py-[28px] px-[25px]">
                       <div className="flex justify-between">
                         <h1 className="text-white mb-[18px] text-[18px] font-[500] leading-tight">Messages</h1>
@@ -532,63 +563,56 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div>
-                    <div>
-                      <h1>Portfolio Slide</h1>
-                      <div>
-                        <div>
-                          <div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
-                            <div>
-                              <div>
-                                <img src="" alt="" />
-                              </div>
-                            </div>
+                <div className="mb-[24px] w-full xl:w-4/12 md:w-6/12 px-3">
+                  <div className="w-full rounded-[4px] bg-[#191c24] h-full flex flex-col">
+                    <div className="py-[28px] px-[25px]">
+                      <h1 className="text-white mb-[18px] text-[18px] font-[500] leading-tight">Portfolio Slide</h1>
+                      <div className="block w-full relative z-1">
+                        <div className="relative w-full overflow-hidden">
+                          <div className="flex relative transition-all duration-[0.25s] ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)`}}>
+                            {
+                              images.map((img, index) => (
+                                <div key={index} className="flex-shrink-0 w-full">
+                                  <div>
+                                    <img src={img} className="w-full rounded-[4px] align-middle" alt="" />
+                                  </div>
+                                </div>
+                              ))
+                            }
                           </div>
                         </div>
-                        <div>
-                          <div>
-                            <MdArrowBackIos />
+                        <div className="top-auto bottom-full absolute flex right-0 mt-0 pb-[14px] px-[2px] gap-1">
+                          <div onClick={prevSlide} className="float-none m-0 w-[32px] h-[32px] bg-black/50 rounded-full flex items-center justify-center">
+                            <MdArrowBackIos className="text-[#a7afb7]" size={14} />
                           </div>
-                          <div>
-                            <MdArrowForwardIos />
+                          <div onClick={nextSlide} className="float-none m-0 w-[32px] h-[32px] bg-black/50 rounded-full flex items-center justify-center">
+                            <MdArrowForwardIos className="text-[#a7afb7]" size={14} />
                           </div>
                         </div>
                         <div></div>
                       </div>
-                      <div></div>
-                      <p></p>
-                      <div></div>
+                      <div className="py-[24px] flex">
+                        <div className="w-full">
+                          <div className="flex items-start p-0">
+                            <div className="relative">
+                              <img src={slideUserOne} className="w-[40px] h-[40px] flex items-center justify-center text-center rounded-full align-middle" alt="" />
+                            </div>
+                            <div className="leading-none pl-[15px] flex-grow flex">
+                              <div className="flex-grow">
+                                <div className="xl:flex xl:justify-between md:block lg:block flex justify-between">
+                                  <h1 className="text-[15px] font-[500] mt-0 mb-[8px] leading-tight text-white">CeeCee Bass</h1>
+                                  <p className="text-[#6c7293] mb-[10px] leading-none text-[12px] mt-0">4 Hours Ago</p>
+                                </div>
+                                <p className="text-[#6c7293] mb-[10px] leading-none text-[14px] mt-0">Well, it seems to be working now.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-[#6c7293] text-[14px] mt-0 mb-[16px]">Well, it seems to be working now.</p>
+                      <div className="h-[16px] text-[12px] bg-[#000000] rounded-md shadow-inner text-white transition-all duration-[600ms] ease-in-out flex overflow-hidden">
+                        <div className="w-[50%] bg-green-500 flex justify-center overflow-hidden text-center whitespace-nowrap"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
