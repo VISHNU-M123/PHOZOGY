@@ -20,12 +20,14 @@ import msgUserOne from '../assets/face6.jpg'
 import msgUserTwo from '../assets/face8.jpg'
 import msgUserThree from '../assets/face9.jpg'
 import msgUserFour from '../assets/face11.jpg'
-import { MdArrowBackIos } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import dashSlideImgOne from '../assets/img_5.jpg'
 import dashSlideImgTwo from '../assets/img_6.jpg'
 import dashSlideImgThree from '../assets/Rectangle.jpg'
 import slideUserOne from '../assets/face12.jpg'
+import { AiFillCloseSquare } from "react-icons/ai";
+import { IoMdCheckmark } from "react-icons/io";
 
 const Dashboard = () => {
 
@@ -583,10 +585,10 @@ const Dashboard = () => {
                         </div>
                         <div className="top-auto bottom-full absolute flex right-0 mt-0 pb-[14px] px-[2px] gap-1">
                           <div onClick={prevSlide} className="float-none m-0 w-[32px] h-[32px] bg-black/50 rounded-full flex items-center justify-center">
-                            <MdArrowBackIos className="text-[#a7afb7]" size={14} />
+                            <MdKeyboardArrowLeft className="text-[#a7afb7]" size={20} />
                           </div>
                           <div onClick={nextSlide} className="float-none m-0 w-[32px] h-[32px] bg-black/50 rounded-full flex items-center justify-center">
-                            <MdArrowForwardIos className="text-[#a7afb7]" size={14} />
+                            <MdKeyboardArrowRight  className="text-[#a7afb7]" size={20} />
                           </div>
                         </div>
                         <div></div>
@@ -616,7 +618,83 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div></div>
+                <div className="mb-[24px] w-full xl:w-4/12 md:w-full px-3">
+                  <div className="w-full rounded-[4px] bg-[#191c24] h-full">
+                    <div className="py-[28px] px-[25px]">
+                      <h1 className="text-white mb-[18px] text-[18px] font-[500] leading-tight">To Do List</h1>
+                      <div className="flex mb-[24px]">
+                        <input type="text" className="w-full bg-transparent h-[41px] border border-[#2c2e33] outline-none py-[10px] px-[11px] text-white text-[14px] font-normal rounded-[2px]" placeholder="enter task" />
+                        <button className="text-white ml-[8px] cursor-pointer inline-block py-[6px] px-[12px] mb-0 text-[14px] leading-[1.42857143] text-center align-middle whitespace-nowrap bg-[#0090e7] rounded-[4px]">Add</button>
+                      </div>
+                      <div className="h-full">
+                        <ul className="p-0 mb-0 text-left flex flex-col-reverse">
+                          <li className="text-[15px] py-[12px] flex items-center justify-start leading-[1.8]">
+                            <div className="my-[4px] text-ellipsis overflow-hidden whitespace-nowrap min-h-[18px] pl-[20px] relative block max-w-[90%]">
+                              <label htmlFor="" className="text-ellipsis overflow-hidden max-w-full whitespace-nowrap block pl-[16px] text-[14px] leading-normal text-[#6c7293]">
+                                <input type="text" className="mr-[15px] absolute top-0 left-0 ml-0 mt-0 z-1 cursor-pointer opacity-0 outline-none" />
+                                Create invoice
+                                <i className="h-[16px] w-[16px] rounded-[2px] border-[#0090e7] absolute top-0.5 left-0 border-2"></i>
+                              </label>
+                            </div>
+                            <i className="ml-auto text-white text-[18px]">
+                              <AiFillCloseSquare  />
+                            </i>
+                          </li>
+                          <li className="text-[15px] py-[12px] flex items-center justify-start leading-[1.8] border-b border-b-[#2c2e33]">
+                            <div className="my-[4px] text-ellipsis overflow-hidden whitespace-nowrap min-h-[18px] pl-[20px] relative block max-w-[90%]">
+                              <label htmlFor="" className="text-ellipsis overflow-hidden max-w-full whitespace-nowrap block pl-[16px] text-[14px] leading-normal text-[#6c7293]">
+                                <input type="text" className="mr-[15px] absolute top-0 left-0 ml-0 mt-0 z-1 cursor-pointer opacity-0 outline-none" />
+                                Meeting with Alita
+                                <i className="h-[16px] w-[16px] rounded-[2px] border-[#0090e7] absolute top-0.5 left-0 border-2"></i>
+                              </label>  
+                            </div>
+                            <i className="ml-auto text-white text-[18px]">
+                              <AiFillCloseSquare  />
+                            </i>
+                          </li>
+                          <li className="text-[15px] py-[12px] flex items-center justify-start leading-[1.8] border-b border-b-[#2c2e33]">
+                            <div className="my-[4px] text-ellipsis overflow-hidden whitespace-nowrap min-h-[18px] pl-[20px] relative block max-w-[90%]">
+                              <label htmlFor="" className="text-ellipsis overflow-hidden max-w-full whitespace-nowrap block pl-[16px] text-[14px] leading-normal text-[#6c7293] line-through decoration-[#0090e7] decoration-1">
+                                <input type="text" className="mr-[15px] absolute top-0 left-0 ml-0 mt-0 z-1 cursor-pointer opacity-0 outline-none" />
+                                Prepare for presentation
+                                <i className="h-[16px] w-[16px] rounded-[2px] border-[#0090e7] bg-[#0090e7] absolute top-0.5 left-0 border-2">
+                                  <IoMdCheckmark color="black" />
+                                </i>
+                              </label>
+                            </div>
+                            <i className="ml-auto text-[#0090e7] text-[18px]">
+                              <AiFillCloseSquare  />
+                            </i>
+                          </li>
+                          <li className="text-[15px] py-[12px] flex items-center justify-start leading-[1.8] border-b border-b-[#2c2e33]">
+                            <div className="my-[4px] text-ellipsis overflow-hidden whitespace-nowrap min-h-[18px] pl-[20px] relative block max-w-[90%]">
+                              <label htmlFor="" className="text-ellipsis overflow-hidden max-w-full whitespace-nowrap block pl-[16px] text-[14px] leading-normal text-[#6c7293]">
+                                <input type="text" className="mr-[15px] absolute top-0 left-0 ml-0 mt-0 z-1 cursor-pointer opacity-0 outline-none" />
+                                Plan weekend outing
+                                <i className="h-[16px] w-[16px] rounded-[2px] border-[#0090e7] absolute top-0.5 left-0 border-2"></i>
+                              </label>
+                            </div>
+                            <i className="ml-auto text-white text-[18px]">
+                              <AiFillCloseSquare  />
+                            </i>
+                          </li>
+                          <li className="text-[15px] py-[12px] flex items-center justify-start leading-[1.8] border-b border-b-[#2c2e33]">
+                            <div className="my-[4px] text-ellipsis overflow-hidden whitespace-nowrap min-h-[18px] pl-[20px] relative block max-w-[90%]">
+                              <label htmlFor="" className="text-ellipsis overflow-hidden max-w-full whitespace-nowrap block pl-[16px] text-[14px] leading-normal text-[#6c7293]">
+                                <input type="text" className="mr-[15px] absolute top-0 left-0 ml-0 mt-0 z-1 cursor-pointer opacity-0 outline-none" />
+                                Pick up kids from school
+                                <i className="h-[16px] w-[16px] rounded-[2px] border-[#0090e7] absolute top-0.5 left-0 border-2"></i>
+                              </label>
+                            </div>
+                            <i className="ml-auto text-white text-[18px]">
+                              <AiFillCloseSquare  />
+                            </i>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
