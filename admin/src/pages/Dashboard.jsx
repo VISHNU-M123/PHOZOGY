@@ -28,6 +28,12 @@ import dashSlideImgThree from '../assets/Rectangle.jpg'
 import slideUserOne from '../assets/face12.jpg'
 import { AiFillCloseSquare } from "react-icons/ai";
 import { IoMdCheckmark } from "react-icons/io";
+import usImg from '../assets/us.svg'
+import gerImg from '../assets/ger.svg'
+import ausImg from '../assets/au.svg'
+import ukImg from '../assets/uk.svg'
+import romImg from '../assets/ro.svg'
+import brzImg from '../assets/br.svg'
 
 const Dashboard = () => {
 
@@ -691,6 +697,269 @@ const Dashboard = () => {
                             </i>
                           </li>
                         </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* sixth div */}
+              <div className="-mx-3 flex flex-wrap">
+                <div className="w-full px-3">
+                  <div className="bg-[#191c24] rounded-[4px]">
+                    <div className="py-[28px] px-[25px]">
+                      <h1 className="text-white mb-[18px] text-[18px] font-[500] leading-tight">Visitors By Countries</h1>
+                      <div className="-mx-3 flex flex-wrap">
+                        <div className="px-3 w-5/12">
+                          <div className="overflow-x-auto">
+                            <table className="mb-0">
+                              <tbody>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${usImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">USA</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">1500</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">56.35%</td>
+                                </tr>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${gerImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">Germany</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">800</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">33.25%</td>
+                                </tr>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${ausImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">Australia</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">760</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">15.45%</td>
+                                </tr>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${ukImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">United Kingdom</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">450</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">25.00%</td>
+                                </tr>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${romImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">Romania</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">620</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">10.25%</td>
+                                </tr>
+                                <tr className="border-b border-b-[#2c2e33]">
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">
+                                    <i className="w-[18px] h-[18px] bg-contain bg-no-repeat inline-block leading-[14px] bg-center" style={{ backgroundImage: `url(${brzImg})` }}></i>
+                                  </td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle">Brasil</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end">230</td>
+                                  <td className="text-[14px] leading-none p-[15px] whitespace-nowrap text-white align-middle text-end font-medium">75.00%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <div>
+                              <svg>
+                                <defs></defs>
+                                <g>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                  <path></path>
+                                </g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                              </svg>
+                              <div>+</div>
+                              <div>-</div>
+                              <div></div>
+                              <div></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
