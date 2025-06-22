@@ -811,16 +811,15 @@ const Dashboard = () => {
                             </table>
                           </div>
                         </div>
-                        <div className="px-3 md:w-7/12 w-full">
+                        <div className="px-3 md:w-7/12 w-full relative">
+                          { toolTip.visible && (
+                            <div className="absolute bg-[#292929] bg-opacity-80 text-white px-3 py-2 rounded text-sm font-[200] pointer-events-none z-50 transition-opacity duration-300 whitespace-nowrap" style={{left: `${toolTip.x}px`, top: `${toolTip.y}px`, transform: 'translateX(-50%)'}}>
+                              {toolTip.content}
+                            </div>
+                          )}
                           <div className="w-full h-[300px]">
                             <div ref={mapRef} className="bg-transparent w-full h-full relative overflow-hidden" onMouseMove={handleMouseMove}>
-                              { toolTip.visible && (
-                                <div className="absolute bg-[#292929] bg-opacity-80 text-white px-3 py-2 rounded text-sm font-[200] pointer-events-none z-50 transition-opacity duration-300 whitespace-nowrap" style={{left: `${toolTip.x}px`, top: `${toolTip.y}px`, transform: 'translateX(-50%)'}}>
-                                  {toolTip.content}
-                                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[5px] border-r-[5px] border-t-[5px] border-l-transparent border-t-black border-t-opacity-80"></div>
-                                </div>
-                              )}
-                              <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" className="align-middle w-full h-[300px]">
+                              <svg viewBox="0 0 1000 487.8" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" className="align-middle w-full h-[300px]">
                                 <defs></defs>
                                 <g>
                                   <path d="M651.84,230.21l-0.6,-2.0l-1.36,-1.71l-2.31,-0.11l-0.41,0.48l0.2,0.94l-0.53,0.99l-0.72,-0.36l-0.68,0.35l-1.2,-0.36l-0.37,-2.0l-0.81,-1.86l0.39,-1.46l-0.22,-0.47l-1.14,-0.53l0.29,-0.5l1.48,-0.94l0.03,-0.65l-1.55,-1.22l0.55,-1.14l1.61,0.94l1.04,0.15l0.18,1.54l0.34,0.35l5.64,0.63l-0.84,1.64l-1.22,0.34l-0.77,1.51l0.07,0.47l1.37,1.37l0.67,-0.19l0.42,-1.39l1.21,3.84l-0.03,1.21l-0.33,-0.15l-0.4,0.28Z" data-code="BD" data-name="Bangladesh" fill="white" fillOpacity="1" stroke="none" strokeWidth="0" strokeOpacity="1" fillRule="evenodd" className="world-map-path cursor-pointer transition-all duration-300 hover:fill-gray-300 hover:stroke-gray-600 hover:stroke-1" onMouseEnter={(e) => handleMouseEnter(e, 'Bangladesh')} onMouseLeave={handleMouseLeave} onClick={() => handleCountryClick('Bangladesh', 'BD')}></path>
@@ -1007,8 +1006,8 @@ const Dashboard = () => {
                               </svg>
                               <div className="top-[10px] w-[16px] h-[16px] absolute left-[10px] rounded-[3px] bg-[#292929] p-[3px] text-white cursor-pointer leading-[10px] text-center">+</div>
                               <div className="top-[30px] w-[16px] h-[16px] absolute left-[10px] rounded-[3px] bg-[#292929] p-[3px] text-white cursor-pointer leading-[10px] text-center">-</div>
-                              <div></div>
-                              <div></div>
+                              <div className="absolute bottom-0 right-0"></div>
+                              <div className="absolute top-0 right-0"></div>
                             </div>
                           </div>
                         </div>
