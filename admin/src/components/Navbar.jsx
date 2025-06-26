@@ -17,7 +17,7 @@ import { MdLogout } from "react-icons/md";
 import { MdFormatLineSpacing } from "react-icons/md";
 import Sidebar from './Sidebar';
 
-const Navbar = ({toggleSidebarItems}) => {
+const Navbar = ({toggleSidebarItems, showItems}) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isEmailMsgOpen, setIsEmailMsgOpen] = useState(false);
@@ -71,13 +71,13 @@ const Navbar = ({toggleSidebarItems}) => {
   },[])
 
   return (
-    <div className='bg-[#191c24] flex flex-row z-[1030]'>
+    <div className={`bg-[#191c24] flex flex-row z-[1030] w-full fixed transition-all ease-in-out duration-300 ${showItems ? 'lg:w-[calc(100%-244px)]' : 'lg:w-[calc(100%-70px)]'}`}>
       <div className='bg-[#191c24] flex items-center lg:hidden w-[75px]'>
         <a href="" className='pl-[20px]'>
           <img src={logo_mini} alt="" className='[width:calc(70px-50px)] max-w-full h-[28px] m-auto' />
         </a>
       </div>
-      <div className='px-[15px] w-full h-[70px] flex items-stretch flex-grow-1'>
+      <div className='px-[15px] w-full h-[70px] flex items-stretch flex-grow-1' style={{ boxShadow: '20px 19px 34px -15px rgba(0, 0, 0, 0.5)' }}>
         <button className='text-[14px] h-[70px] self-center cursor-pointer px-[12px] hidden lg:block' onClick={toggleSidebarItems}><MdOutlineMenu color='#6c7293' /></button>
         <ul className='w-full flex items-center flex-row flex-1'>
           <li className='w-full'>
