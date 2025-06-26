@@ -30,12 +30,12 @@ const Sidebar = ({showItems, hideLogoSection = false}) => {
         return () => document.removeEventListener('mousedown', handleClickOutside)
     },[])
   return (
-    <div>
+    <div className={`bg-[#191c24] min-h-full`}>
         {/* nav */}
         <div className={`bg-[#191c24] min-h-[calc(100vh-70px)] h-[100vh] ${showItems ? 'w-[244px]' : 'w-[70px]'} transition-all duration-300 ease-in-out`}>
             {
                 !hideLogoSection && (
-                    <div className='w-[244px] h-[70px] bg-[#191c24] flex items-center transition-all duration-300'>
+                    <div className={`${showItems ? 'w-[244px]' : 'w-[70px]'} h-[70px] bg-[#191c24] flex items-center transition-all duration-300 fixed top-0 left-0 z-[1030]`}>
                         {showItems ? (
                             <a href="" className='pl-[20px] transition-opacity duration-300 opacity-100'>
                                 <img src={logo} alt="" className='w-[calc(244px-120px)]' />
@@ -48,7 +48,7 @@ const Sidebar = ({showItems, hideLogoSection = false}) => {
                     </div>
                 )
             }
-            <ul className='mb-[60px]'>
+            <ul className='mb-[60px] lg:pt-[70px]'>
                 <li>
                     <div className={`flex items-center py-[10px] ${showItems ? 'justify-between px-[20px]' : 'justify-center'}`}>
                         <div className='flex items-center'>

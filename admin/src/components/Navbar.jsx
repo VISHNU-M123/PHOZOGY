@@ -71,7 +71,7 @@ const Navbar = ({toggleSidebarItems}) => {
   },[])
 
   return (
-    <div className='bg-[#191c24] flex flex-row'>
+    <div className='bg-[#191c24] flex flex-row z-[1030]'>
       <div className='bg-[#191c24] flex items-center lg:hidden w-[75px]'>
         <a href="" className='pl-[20px]'>
           <img src={logo_mini} alt="" className='[width:calc(70px-50px)] max-w-full h-[28px] m-auto' />
