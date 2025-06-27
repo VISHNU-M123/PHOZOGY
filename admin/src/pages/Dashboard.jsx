@@ -509,7 +509,7 @@ const Dashboard = () => {
                     <div className="py-[28px] px-[25px]">
                       <h1 className="text-white mb-[18px] text-[18px] font-[500]">Order Status</h1>
                       <div className="overflow-x-auto">
-                        <table className="w-full table-fixed min-w-[1000px]">
+                        <table className="w-full min-w-[1000px]">
                           <thead>
                             <tr>
                               <th className="border-b border-b-[#2c2e33] p-[15px] w-[80px] align-middle">
