@@ -1,11 +1,13 @@
 import React from 'react'
 import loginBg from '../assets/Login_bg.jpg'
+import { FaFacebook } from "react-icons/fa";
+import { FaGooglePlusG } from "react-icons/fa";
 
 const Login = () => {
   return (
     <div className='w-full'>
-      <div className='py-[30px] px-[28px] w-full bg-cover flex items-center' style={{backgroundImage:`url(${loginBg})`}}>
-        <div className='bg-[#191c24] rounded-[4px] mx-auto'>
+      <div className='py-[30px] px-[28px] w-full h-[100vh] bg-cover flex items-center' style={{backgroundImage:`url(${loginBg})`}}>
+        <div className='bg-[#191c24] rounded-[4px] lg:w-4/12 mx-auto'>
             <div className='p-[48px]'>
                 <h1 className='text-white text-left mb-[16px] text-[24px] font-[500] leading-tight'>Login</h1>
                 <form action="">
@@ -30,17 +32,17 @@ const Login = () => {
                     <div className='grid gap-[8px] text-center'>
                         <button className='text-white h-[45px] mb-[28px] cursor-pointer text-[14px] py-[6px] px-[12px] leading-[1.42857143] text-center rounded-[4px] inline-block bg-[#0090e7]'>Login</button>
                     </div>
-                    <div>
-                        <button>
-                            <img src="" alt="" />
+                    <div className='flex'>
+                        <button className='text-[14px] py-[6px] px-[12px] flex items-center flex-1 justify-center gap-1 leading-[1.42857143] text-center rounded-[4px] bg-[#3b579d] text-white mr-[8px] font-normal'>
+                            <FaFacebook />
                             Facebook
                         </button>
-                        <button>
-                            <img src="" alt="" />
+                        <button className='text-[14px] py-[6px] px-[12px] flex items-center flex-1 justify-center gap-1 leading-[1.42857143] text-center rounded-[4px] bg-[#dc4a38] text-white font-normal'>
+                            <FaGooglePlusG />
                             Google plus
                         </button>
                     </div>
-                    <p>Don't have an account? <a href="">Sign Up</a></p>
+                    <p className='text-[14px] mt-[30px] text-center text-white'>Don't have an account? <a href="" className='text-[#0090e7] underline'>Sign Up</a></p>
                 </form>
             </div>
         </div>
