@@ -54,8 +54,8 @@ const Login = () => {
                                 </div>
                                 {
                                     isSignUp === 'Sign Up' 
-                                    ? <p className='text-[14px] mt-[30px] text-center text-white'>Already have an account ? <span onClick={() => setIsSignUp('Login')} className='text-[#0090e7] underline'>Login</span></p> 
-                                    : <p className='text-[14px] mt-[30px] text-center text-white'>Don't have an account? <span onClick={() => setIsSignUp('Sign Up')} className='text-[#0090e7] underline'>Sign Up</span></p>
+                                    ? <p className='text-[14px] mt-[30px] text-center text-white'>Already have an account ? <span onClick={() => setIsSignUp('Login')} className='text-[#0090e7] underline cursor-pointer'>Login</span></p> 
+                                    : <p className='text-[14px] mt-[30px] text-center text-white'>Don't have an account? <span onClick={() => setIsSignUp('Sign Up')} className='text-[#0090e7] underline cursor-pointer'>Sign Up</span></p>
                                 }
                                 {isSignUp === 'Sign Up' && (
                                     <p className='text-[14px] text-center mt-[23px] text-white'>By creating an account you are accepting our <a href="" className='text-[rgb(13,110,253)] underline'>Terms & Conditions</a></p>
