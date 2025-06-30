@@ -19,7 +19,7 @@ const AddCategorySubcategory = () => {
         <div className="w-full">
           <Navbar toggleSidebarItems={toggleSidebarItems} showItems={showSidebarItems} />
           <div className="pt-[70px]">
-            <div className="bg-[#000000] py-[30px] px-[28px] w-full">
+            <div className="bg-[#000000] py-[30px] px-[28px] w-full min-h-screen">
               <CategorySubcategoryForm/>
             </div>
           </div>
