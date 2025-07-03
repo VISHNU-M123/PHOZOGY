@@ -3,7 +3,19 @@ import categoryModel from "../models/categoryModel.js";
 const addCategory = async (req, res) => {
     try {
         const categoryName = req.body.categoryName.trim().toLowerCase();
-        const {categoryDescription} = req.body
+        const {categoryDescription, categoryStatus} = req.body
+
+        if(!categoryName || categoryName.trim() === '' || !/^[a-zA-Z0-9\s]+$/.test(categoryName)){
+            return res.status(400).json({success:false, message:'Invalid or Category Name is required'})
+        }
+
+        if(!categoryDescription || categoryDescription.trim() === ''){
+            return res.status(400).json({success:false, message:'Category description is required'})
+        }
+
+        if(!['Active', 'Blocked'].includes(categoryStatus)){
+            return res.status(400).json({success:false, message:'Invalid status'})
+        }
 
         const existingCategory = await categoryModel.findOne({categoryName:categoryName})
 
@@ -13,7 +25,8 @@ const addCategory = async (req, res) => {
 
         const newCategory = new categoryModel({
             categoryName:categoryName,
-            categoryDescription:categoryDescription
+            categoryDescription:categoryDescription,
+            categoryStatus:categoryStatus
         })
 
         await newCategory.save()
