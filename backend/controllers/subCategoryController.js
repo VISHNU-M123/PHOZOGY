@@ -4,7 +4,19 @@ import subCategoryModel from "../models/subCategoryModel.js"
 const addSubCategory = async (req, res) => {
     try {
         const subCategoryName = req.body.subCategoryName.trim().toLowerCase()
-        const {subCategoryDescription, mainCategoryId} = req.body
+        const {subCategoryDescription, subCategoryStatus, mainCategoryId} = req.body
+
+        if(!subCategoryName || subCategoryName.trim() === '' || !/^[a-zA-Z0-9\s]+$/.test(subCategoryName)){
+            return res.status(400).json({success:false, message:'Invalid or Subcategory name is required'})
+        }
+
+        if(!subCategoryDescription || subCategoryDescription.trim() === ''){
+            return res.status(400).json({success:false, message:'Subcategory description is required'})
+        }
+
+        if(!['Active', 'Blocked'].includes(subCategoryStatus)){
+            return res.status(400).json({success:false, message:'Invalid status'})
+        }
 
         if(!mainCategoryId){
             return res.status(401).json({success:false, message:'Please select a main category'})
@@ -23,6 +35,7 @@ const addSubCategory = async (req, res) => {
         const newSubCategory = new subCategoryModel({
             subCategoryName:subCategoryName,
             subCategoryDescription:subCategoryDescription,
+            subCategoryStatus:subCategoryStatus,
             categoryId:mainCategoryId
         })
 

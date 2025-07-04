@@ -36,6 +36,16 @@ const addCategory = async (req, res) => {
     }
 }
 
+const loadAllCategory = async (req, res) => {
+    try {
+        const allCategory = await categoryModel.find({})
+        res.json({success:true, allCategory})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
-    addCategory
+    addCategory,
+    loadAllCategory
 }
