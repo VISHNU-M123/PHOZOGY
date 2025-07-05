@@ -4,7 +4,7 @@ import { AdminContext } from '../context/AdminContext'
 import { useState } from 'react'
 import axios from 'axios'
 
-const CategorySubcategoryForm = () => {
+const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcategory}) => {
 
     const {aToken, backendUrl} = useContext(AdminContext)
 
@@ -172,13 +172,13 @@ const CategorySubcategoryForm = () => {
   return (
     <div>
         <div className='mb-[24px] flex items-center'>
-            <h1 className='text-white text-[18px] font-[500] leading-tight'>Add Category and Subcategory</h1>
+            <h1 className='text-white text-[18px] font-[500] leading-tight'>{heading}</h1>
         </div>
         <div className='-mx-3 flex flex-col md:flex-row'>
             <div className='mb-[24px] md:w-1/2 px-3'>
                 <div className='w-full min-w-full rounded-[4px] bg-[#191c24]'>
                     <div className='py-[28px] px-[25px]'>
-                        <h1 className='text-white mb-[18px] text-[18px] font-[500] capitalize'>Add Category</h1>
+                        <h1 className='text-white mb-[18px] text-[18px] font-[500] capitalize'>{subHeadingCategory}</h1>
                         {globalCategoryError && (
                             <h6 className='text-center text-red-500 text-sm block mt-1'>{globalCategoryError}</h6>
                         )}
@@ -214,7 +214,7 @@ const CategorySubcategoryForm = () => {
             <div className='mb-[24px] md:w-1/2 px-3'>
                 <div className='w-full min-w-full rounded-[4px] bg-[#191c24]'>
                     <div className='py-[28px] px-[25px]'>
-                        <h1 className='text-white mb-[18px] text-[18px] font-[500] capitalize'>Add Subcategory</h1>
+                        <h1 className='text-white mb-[18px] text-[18px] font-[500] capitalize'>{subHeadingSubcategory}</h1>
                         {globalSubcategoryError && (
                             <h6 className='text-center text-red-500 text-sm block mt-1'>{globalSubcategoryError}</h6>
                         )}

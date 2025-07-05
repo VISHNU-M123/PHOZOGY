@@ -4,6 +4,8 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import AddCategorySubcategory from './pages/AddCategorySubcategory'
 import { AdminContext } from './context/AdminContext'
+import EditCategorySubcategory from './pages/EditCategorySubcategory'
+import AllCategory from './pages/AllCategory'
 
 const App = () => {
 
@@ -14,6 +16,9 @@ const App = () => {
         <Route path='/' element={aToken ? <Dashboard/> : <Navigate to='/login'/>} />
         <Route path='/login' element={!aToken ? <Login/> : <Navigate to="/"/>} />
         <Route path='/add-category' element={aToken ? <AddCategorySubcategory/> : <Navigate to='/login'/>} />
+        <Route path='/add-subCategory' element={aToken ? <AddCategorySubcategory/> : <Navigate to='/login'/>} />
+        <Route path='/edit-category' element={aToken ? <EditCategorySubcategory/> : <Navigate to='/login'/>} />
+        <Route path='/all-category' element={aToken ? <AllCategory/> : <Navigate to='/login'/>} />
       </Routes>
     </div>
   )
