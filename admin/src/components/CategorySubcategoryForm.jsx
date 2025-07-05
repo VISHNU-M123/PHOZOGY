@@ -11,7 +11,7 @@ const CategorySubcategoryForm = () => {
     const [categoryData, setCategoryData] = useState({ categoryName:'', categoryDescription:'', categoryStatus:'Active' })
     const [subCategoryData, setSubcategoryData] = useState({ subCategoryName:'', subCategoryDescription:'', subCategoryStatus:'Active', mainCategoryId:''})
     const [showCategoryErrorMsg, setShowCategoryErrorMsg] = useState({categoryName:'', categoryDescription:''})
-    const [showSubcategoryErrorMsg, setShowSubcategoryErrorMsg] = useState({subCategoryName: '', subCategoryDescription: ''})
+    const [showSubcategoryErrorMsg, setShowSubcategoryErrorMsg] = useState({subCategoryName: '', subCategoryDescription: '', mainCategoryId: ''})
     const [globalCategoryError, setGlobalCategoryError] = useState('')
     const [globalSubcategoryError, setGlobalSubcategoryError] = useState('')
     const [listAllCategory, setListAllCategory] = useState([])
@@ -39,9 +39,6 @@ const CategorySubcategoryForm = () => {
 
             if(categoryData.categoryName.trim() === ''){
                 newErrors.categoryName = 'Category name is required'
-                hasError = true
-            } else if (!/^[a-zA-Z0-9\s]+$/.test(categoryData.categoryName)) {
-                newErrors.categoryName = 'Invalid category name. Only letters and numbers allowed.'
                 hasError = true
             }
 
@@ -84,13 +81,10 @@ const CategorySubcategoryForm = () => {
         e.preventDefault()
         try {
             let hasError = false
-            let newErrors = {subCategoryName: '', subCategoryDescription: ''}
+            let newErrors = {subCategoryName: '', subCategoryDescription: '', mainCategoryId: ''}
 
             if(subCategoryData.subCategoryName.trim() === ''){
                 newErrors.subCategoryName = 'Subcategory name is required'
-                hasError = true
-            }else if (!/^[a-zA-Z0-9\s]+$/.test(subCategoryData.subCategoryName)){
-                newErrors.subCategoryName = 'Invalid subcategory name. Only letters and numbers allowed.'
                 hasError = true
             }
 
@@ -100,7 +94,7 @@ const CategorySubcategoryForm = () => {
             }
 
             if(subCategoryData.mainCategoryId === ''){
-                setGlobalSubcategoryError('Please select a main category')
+                newErrors.mainCategoryId = 'Please select a main category'
                 hasError = true
             }
 
@@ -121,7 +115,7 @@ const CategorySubcategoryForm = () => {
             if(data.success){
                 alert('subcategory added successfully')
                 setSubcategoryData({subCategoryName: '', subCategoryDescription: '', subCategoryStatus: 'Active', mainCategoryId: ''})
-                setShowSubcategoryErrorMsg({subCategoryName: '', subCategoryDescription: ''})
+                setShowSubcategoryErrorMsg({subCategoryName: '', subCategoryDescription: '', mainCategoryId: ''})
                 setGlobalSubcategoryError('')
             }else{
                 alert(data.message)
@@ -143,7 +137,7 @@ const CategorySubcategoryForm = () => {
 
     const handleSubcategoryCancel = () => {
         setSubcategoryData({subCategoryName: '', subCategoryDescription: '', subCategoryStatus: 'Active', mainCategoryId: ''})
-        setShowSubcategoryErrorMsg({subCategoryName: '', subCategoryDescription: ''})
+        setShowSubcategoryErrorMsg({subCategoryName: '', subCategoryDescription: '', mainCategoryId: ''})
         setGlobalSubcategoryError('')
     }
 
@@ -249,12 +243,15 @@ const CategorySubcategoryForm = () => {
                             </div>
                             <div className='mb-[40px]'>
                                 <label htmlFor="" className='text-[14px] leading-none align-top text-white'>Select Main Category</label>
-                                <select name="mainCategoryId" value={subCategoryData.mainCategoryId} onChange={handleSubcategoryChange} id="" className='h-[41.2px] border border-[#2c2e33] text-[14px] font-normal py-[10px] px-[11px] bg-[#2A3038] rounded-[2px] text-white leading-none w-full block outline-none'>
+                                <select name="mainCategoryId" value={subCategoryData.mainCategoryId} onChange={handleSubcategoryChange} id="" className={`h-[41.2px] border text-[14px] font-normal py-[10px] px-[11px] bg-[#2A3038] rounded-[2px] text-white leading-none w-full block outline-none ${showSubcategoryErrorMsg.mainCategoryId ? 'border-red-500' : 'border-[#2c2e33]'}`}>
                                     <option value="">Select main category</option>
                                     {listAllCategory.map(cat => (
                                         <option key={cat._id} value={cat._id}>{cat.categoryName}</option>
                                     ))}
                                 </select>
+                                {showSubcategoryErrorMsg.mainCategoryId && (
+                                    <span className='text-red-500 text-xs block mt-1'>{showSubcategoryErrorMsg.mainCategoryId}</span>
+                                )}
                             </div>
                             <button type='submit' className='text-white cursor-pointer py-[6px] px-[12px] text-[14px] font-normal leading-[1.42857143] text-center align-middle rounded-[4px] bg-[#0090e7] mr-[8px] inline-block'>Submit</button>
                             <button type='button' onClick={handleSubcategoryCancel} className='text-white cursor-pointer py-[6px] px-[12px] text-[14px] font-normal leading-[1.42857143] text-center align-middle rounded-[4px] bg-[#0d0d0d] inline-block'>Cancel</button>

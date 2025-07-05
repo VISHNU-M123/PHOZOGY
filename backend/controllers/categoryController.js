@@ -5,8 +5,8 @@ const addCategory = async (req, res) => {
         const categoryName = req.body.categoryName.trim().toLowerCase();
         const {categoryDescription, categoryStatus} = req.body
 
-        if(!categoryName || categoryName.trim() === '' || !/^[a-zA-Z0-9\s]+$/.test(categoryName)){
-            return res.status(400).json({success:false, message:'Invalid or Category Name is required'})
+        if(!categoryName || categoryName.trim() === ''){
+            return res.status(400).json({success:false, message:'Category Name is required'})
         }
 
         if(!categoryDescription || categoryDescription.trim() === ''){

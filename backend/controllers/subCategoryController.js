@@ -6,8 +6,8 @@ const addSubCategory = async (req, res) => {
         const subCategoryName = req.body.subCategoryName.trim().toLowerCase()
         const {subCategoryDescription, subCategoryStatus, mainCategoryId} = req.body
 
-        if(!subCategoryName || subCategoryName.trim() === '' || !/^[a-zA-Z0-9\s]+$/.test(subCategoryName)){
-            return res.status(400).json({success:false, message:'Invalid or Subcategory name is required'})
+        if(!subCategoryName || subCategoryName.trim() === ''){
+            return res.status(400).json({success:false, message:'Subcategory name is required'})
         }
 
         if(!subCategoryDescription || subCategoryDescription.trim() === ''){
