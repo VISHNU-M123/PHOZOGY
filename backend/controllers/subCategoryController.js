@@ -46,6 +46,41 @@ const addSubCategory = async (req, res) => {
     }
 }
 
+const loadAllSubcategory = async (req, res) => {
+    try {
+        const {categoryId} = req.params
+        const subCategories = await subCategoryModel.find({categoryId})
+
+        if(subCategories.length === 0){
+            return res.status(404).json({success:false, message:'No Subcategories found for this category'})
+        }
+
+        res.status(200).json({success:true, subCategories})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
+const toggleSubcategoryStatus = async (req, res) => {
+    try {
+        const {subCategoryId, currentStatus} = req.body
+
+        const subCategory = await subCategoryModel.findById(subCategoryId)
+        if(!subCategory){
+            return res.status(404).json({success:false, message:'Subcategory not found'})
+        }
+
+        subCategory.subCategoryStatus = currentStatus === 'Active' ? 'Blocked' : 'Active'
+        await subCategory.save()
+
+        res.status(200).json({success:true, message:'Subcategory status updated successfully', updatedStatus:subCategory.subCategoryStatus, subCategory})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
-    addSubCategory
+    addSubCategory,
+    loadAllSubcategory,
+    toggleSubcategoryStatus
 }

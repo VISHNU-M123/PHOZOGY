@@ -63,8 +63,45 @@ const toggleCategoryStatus = async (req, res) => {
     }
 }
 
+const updateCategory = async (req, res) => {
+    try {
+        const {categoryId} = req.params
+        const category = await categoryModel.findById(categoryId);
+
+        const {categoryName, categoryDescription, categoryStatus} = req.body
+        if(!categoryName || categoryName.trim() === ''){
+            return res.status(400).json({success:false, message:'Category Name is required'})
+        }
+
+        if(!categoryDescription || categoryDescription.trim() === ''){
+            return res.status(400).json({success:false, message:'Category description is required'})
+        }
+
+        if(!['Active', 'Blocked'].includes(categoryStatus)){
+            return res.status(400).json({success:false, message:'Invalid status'})
+        }
+
+        const existingCategory = await categoryModel.findOne({categoryName:categoryName})
+
+        if(existingCategory && existingCategory._id.toString() !== categoryId){
+            return res.status(400).json({success:false, message:'Category already exists'})
+        }
+
+        await categoryModel.findByIdAndUpdate(categoryId, {
+            categoryName:categoryName,
+            categoryDescription:categoryDescription,
+            categoryStatus:categoryStatus
+        })
+
+        res.status(200).json({success:true, message:'Category updated successfully'})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
     addCategory,
     loadAllCategory,
-    toggleCategoryStatus
+    toggleCategoryStatus,
+    updateCategory
 }
