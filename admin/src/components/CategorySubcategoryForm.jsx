@@ -3,8 +3,9 @@ import { useContext } from 'react'
 import { AdminContext } from '../context/AdminContext'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcategory}) => {
+const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcategory, mode='add', categoryId=null}) => {
 
     const {aToken, backendUrl} = useContext(AdminContext)
 
@@ -15,6 +16,8 @@ const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcate
     const [globalCategoryError, setGlobalCategoryError] = useState('')
     const [globalSubcategoryError, setGlobalSubcategoryError] = useState('')
     const [listAllCategory, setListAllCategory] = useState([])
+
+    const navigate = useNavigate()
 
     const handleCategoryChange = (e) => {
         const {name, value} = e.target
@@ -51,20 +54,35 @@ const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcate
                 setShowCategoryErrorMsg(newErrors)
                 return
             }
-                
-            const {data} = await axios.post(`${backendUrl}/api/admin/add-category`, {
-                categoryName: categoryData.categoryName,
-                categoryDescription: categoryData.categoryDescription,
-                categoryStatus: categoryData.categoryStatus
-            },{
-                headers: {aToken}
-            })
+
+            let data;
+
+            if(mode === 'edit' && categoryId){
+                const response = await axios.post(`${backendUrl}/api/admin/edit-category/${categoryId}`,{
+                    categoryName: categoryData.categoryName,
+                    categoryDescription: categoryData.categoryDescription,
+                    categoryStatus: categoryData.categoryStatus
+                },{headers: {aToken}})
+
+                data = response.data
+            }else{
+                const response = await axios.post(`${backendUrl}/api/admin/add-category`, {
+                    categoryName: categoryData.categoryName,
+                    categoryDescription: categoryData.categoryDescription,
+                    categoryStatus: categoryData.categoryStatus
+                },{
+                    headers: {aToken}
+                })
+
+                data = response.data
+            }
 
             if(data.success){
-                alert('category added successfully')
+                alert(`category ${mode === 'add' ? 'added' : 'edited'}  successfully`)
                 setCategoryData({categoryName: '', categoryDescription: '', categoryStatus: 'Active'})
                 setShowCategoryErrorMsg({categoryName: '', categoryDescription: ''})
                 setGlobalCategoryError('')
+                navigate('/all-category')
             }else{
                 alert(data.message)
             }
@@ -168,6 +186,27 @@ const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcate
         }
         fetchCategories()
     }, [aToken])
+
+    useEffect(() => {
+        const fetchCategoryDetails = async () => {
+            try {
+                if(mode === 'edit' && categoryId){
+                    const {data} = await axios.get(`${backendUrl}/api/admin/getEditCategory/${categoryId}`,{headers:{aToken}})
+                    if(data.success){
+                        const {category} = data
+                        setCategoryData({
+                            categoryName: category.categoryName,
+                            categoryDescription: category.categoryDescription,
+                            categoryStatus: category.categoryStatus
+                        })
+                    }
+                }
+            } catch (error) {
+                console.log('failed to fetch categories')
+            }
+        }
+        fetchCategoryDetails()
+    },[mode, categoryId, aToken])
 
   return (
     <div>

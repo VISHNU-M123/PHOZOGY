@@ -18,7 +18,7 @@ const App = () => {
         <Route path='/login' element={!aToken ? <Login/> : <Navigate to="/"/>} />
         <Route path='/add-category' element={aToken ? <AddCategorySubcategory/> : <Navigate to='/login'/>} />
         <Route path='/add-subCategory' element={aToken ? <AddCategorySubcategory/> : <Navigate to='/login'/>} />
-        <Route path='/edit-category' element={aToken ? <EditCategorySubcategory/> : <Navigate to='/login'/>} />
+        <Route path='/edit-category/:categoryId' element={aToken ? <EditCategorySubcategory/> : <Navigate to='/login'/>} />
         <Route path='/all-category' element={aToken ? <AllCategory/> : <Navigate to='/login'/>} />
         <Route path='/all-subCategories/:categoryId' element={aToken ? <AllSubCategory/> : <Navigate to='/login'/>} />
       </Routes>

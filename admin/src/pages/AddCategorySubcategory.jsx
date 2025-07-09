@@ -20,7 +20,7 @@ const AddCategorySubcategory = () => {
           <Navbar toggleSidebarItems={toggleSidebarItems} showItems={showSidebarItems} />
           <div className="pt-[70px]">
             <div className="bg-[#000000] py-[30px] px-[28px] w-full min-h-screen">
-              <CategorySubcategoryForm heading='Add Category and Subcategory' subHeadingCategory = 'Add Category' subHeadingSubcategory = 'Add Subcategory'/>
+              <CategorySubcategoryForm heading='Add Category and Subcategory' subHeadingCategory = 'Add Category' subHeadingSubcategory = 'Add Subcategory' mode='add'/>
             </div>
           </div>
         </div>
