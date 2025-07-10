@@ -21,6 +21,7 @@ const App = () => {
         <Route path='/edit-category/:categoryId' element={aToken ? <EditCategorySubcategory/> : <Navigate to='/login'/>} />
         <Route path='/all-category' element={aToken ? <AllCategory/> : <Navigate to='/login'/>} />
         <Route path='/all-subCategories/:categoryId' element={aToken ? <AllSubCategory/> : <Navigate to='/login'/>} />
+        <Route path='/edit-subCategory/:subCategoryId' element={aToken ? <EditCategorySubcategory/> : <Navigate to='/login'/>} />
       </Routes>
     </div>
   )

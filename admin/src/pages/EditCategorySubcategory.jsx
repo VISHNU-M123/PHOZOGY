@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 const EditCategorySubcategory = () => {
 
-  const {categoryId} = useParams()
+  const {categoryId, subCategoryId} = useParams()
 
     const [showSidebarItems, setShowSidebarItems] = useState(true)
     
@@ -23,7 +23,7 @@ const EditCategorySubcategory = () => {
           <Navbar toggleSidebarItems={toggleSidebarItems} showItems={showSidebarItems} />
           <div className="pt-[70px]">
             <div className="bg-[#000000] py-[30px] px-[28px] w-full min-h-screen">
-              <CategorySubcategoryForm heading='Edit Category and Subcategory' subHeadingCategory = 'Edit Category' subHeadingSubcategory = 'Edit Subcategory' mode='edit' categoryId={categoryId}/>
+              <CategorySubcategoryForm heading='Edit Category and Subcategory' subHeadingCategory = 'Edit Category' subHeadingSubcategory = 'Edit Subcategory' mode='edit' categoryId={categoryId} subCategoryId={subCategoryId}/>
             </div>
           </div>
         </div>

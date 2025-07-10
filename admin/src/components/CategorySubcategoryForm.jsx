@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcategory, mode='add', categoryId=null}) => {
+const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcategory, mode='add', categoryId=null, subCategoryId=null}) => {
 
     const {aToken, backendUrl} = useContext(AdminContext)
 
@@ -121,20 +121,38 @@ const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcate
                 return
             }
 
-            const {data} = await axios.post(`${backendUrl}/api/admin/add-subCategory`, {
-                subCategoryName: subCategoryData.subCategoryName,
-                subCategoryDescription: subCategoryData.subCategoryDescription,
-                subCategoryStatus: subCategoryData.subCategoryStatus,
-                mainCategoryId: subCategoryData.mainCategoryId
-            },{
-                headers: {aToken}
-            })
+            let data;
+
+            if(mode === 'edit' && subCategoryId){
+                const response = await axios.post(`${backendUrl}/api/admin/edit-subCategory/${subCategoryId}`, {
+                    subCategoryName: subCategoryData.subCategoryName,
+                    subCategoryDescription: subCategoryData.subCategoryDescription,
+                    subCategoryStatus: subCategoryData.subCategoryStatus,
+                    mainCategoryId: subCategoryData.mainCategoryId
+                },{
+                    headers: {aToken}
+                })
+
+                data = response.data
+            }else{
+                const response = await axios.post(`${backendUrl}/api/admin/add-subCategory`, {
+                    subCategoryName: subCategoryData.subCategoryName,
+                    subCategoryDescription: subCategoryData.subCategoryDescription,
+                    subCategoryStatus: subCategoryData.subCategoryStatus,
+                    mainCategoryId: subCategoryData.mainCategoryId
+                },{
+                    headers: {aToken}
+                })
+
+                data = response.data
+            }
 
             if(data.success){
-                alert('subcategory added successfully')
+                alert(`subcategory ${mode === 'add' ? 'added' : 'edited'} successfully`)
                 setSubcategoryData({subCategoryName: '', subCategoryDescription: '', subCategoryStatus: 'Active', mainCategoryId: ''})
                 setShowSubcategoryErrorMsg({subCategoryName: '', subCategoryDescription: '', mainCategoryId: ''})
                 setGlobalSubcategoryError('')
+                navigate(`/all-subCategories/${subCategoryData.mainCategoryId}`)
             }else{
                 alert(data.message)
             }
@@ -207,6 +225,28 @@ const CategorySubcategoryForm = ({heading, subHeadingCategory, subHeadingSubcate
         }
         fetchCategoryDetails()
     },[mode, categoryId, aToken])
+
+    useEffect(() => {
+        const fetchSubCategoryDetails = async () => {
+            try {
+                if(mode === 'edit' && subCategoryId){
+                    const {data} = await axios.get(`${backendUrl}/api/admin/getEditSubcategory/${subCategoryId}`, {headers:{aToken}})
+                    if(data.success){
+                        const {subCategory} = data
+                        setSubcategoryData({
+                            subCategoryName: subCategory.subCategoryName,
+                            subCategoryDescription: subCategory.subCategoryDescription,
+                            subCategoryStatus: subCategory.subCategoryStatus,
+                            mainCategoryId: subCategory.mainCategoryId
+                        })
+                    }
+                }
+            } catch (error) {
+                console.log('failed to fetch subcategories', error)
+            }
+        }
+        fetchSubCategoryDetails()
+    },[mode, subCategoryId, aToken])
 
   return (
     <div>

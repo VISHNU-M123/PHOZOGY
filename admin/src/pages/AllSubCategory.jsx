@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import { FaPencilAlt } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
 import { AdminContext } from '../context/AdminContext';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const AllSubCategory = () => {
@@ -18,6 +18,8 @@ const AllSubCategory = () => {
   const toggleSidebarItems = () => {
     setShowSidebarItems(prev => !prev)
   }
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchAllSubcategories = async () => {
@@ -42,6 +44,10 @@ const AllSubCategory = () => {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  const handleEditSubcategory = (subCategoryId) => {
+    navigate(`/edit-subCategory/${subCategoryId}`)
   }
   
   return (
@@ -78,7 +84,7 @@ const AllSubCategory = () => {
                                       <button onClick={() => handleToggleSubcategoryStatus(subCategory._id, subCategory.subCategoryStatus)} className={`border hover:text-white py-[8px] px-[11px] rounded-[4px] text-[12px] leading-none font-[500] text-center inline-block cursor-pointer ${subCategory.subCategoryStatus === 'Active' ? 'border-[#00d25b] text-[#00d25b] hover:bg-[#00d25b]' : 'border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a]'}`}>{subCategory.subCategoryStatus}</button>
                                   </td>
                                   <td className="p-[15px] text-[14px] align-middle leading-none whitespace-nowrap text-white border-b border-b-[#2c2e33]">
-                                      <a href="" className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white mr-3'>
+                                      <a href="" onClick={() => handleEditSubcategory(subCategory._id)} className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white mr-3'>
                                           <FaPencilAlt size={14} />
                                       </a>
                                       <a href="" className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a] hover:text-white'>

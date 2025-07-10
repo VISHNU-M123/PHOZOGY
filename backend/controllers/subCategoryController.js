@@ -79,8 +79,69 @@ const toggleSubcategoryStatus = async (req, res) => {
     }
 }
 
+const loadEditSubcategory = async (req, res) => {
+    try {
+        const {subCategoryId} = req.params
+        const subCategory = await subCategoryModel.findById(subCategoryId).populate('categoryId')
+        if(!subCategory){
+            return res.status(404).json({success:false, message:'Subcategory not found'})
+        }
+        return res.status(200).json({success:true, subCategory})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
+const updateSubcategory = async (req, res) => {
+    try {
+        const {subCategoryId} = req.params
+        const subCategory = await subCategoryModel.findById(subCategoryId)
+        if(!subCategory){
+            return res.status(404).json({success:false, message:'Subcategory not found'})
+        }
+        
+        const subCategoryName = req.body.subCategoryName.trim()
+        const {subCategoryDescription, subCategoryStatus, mainCategoryId} = req.body
+
+        if(!subCategoryName || subCategoryName.trim() === ''){
+            return res.status(400).json({success:false, message:'Subcategory name is required'})
+        }
+
+        if(!subCategoryDescription || subCategoryDescription.trim() === ''){
+            return res.status(400).json({success:false, message:'Subcategory description is required'})
+        }
+
+        if(!['Active', 'Blocked'].includes(subCategoryStatus)){
+            return res.status(400).json({success:false, message:'Invalid status'})
+        }
+
+        const mainCategory = await categoryModel.findById(mainCategoryId)
+        if(!mainCategory){
+            return res.status(404).json({success:false, message:'Main category not found'})
+        }
+
+        const existingSubCategory = await subCategoryModel.findOne({subCategoryName:subCategoryName, categoryId:mainCategoryId})
+        if(existingSubCategory && existingSubCategory._id.toString() !== subCategoryId){
+            return res.status(400).json({success:false, message:'Subcategory already exists'})
+        }
+
+        await subCategoryModel.findByIdAndUpdate(subCategoryId, {
+            subCategoryName:subCategoryName,
+            subCategoryDescription:subCategoryDescription,
+            subCategoryStatus:subCategoryStatus,
+            categoryId:mainCategoryId
+        })
+
+        res.status(200).json({success:true, message:'Subcategory updated successfully'})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
     addSubCategory,
     loadAllSubcategory,
-    toggleSubcategoryStatus
+    toggleSubcategoryStatus,
+    loadEditSubcategory,
+    updateSubcategory
 }
