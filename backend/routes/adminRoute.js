@@ -1,8 +1,8 @@
 import express from 'express'
 import { loginAdmin } from '../controllers/adminController.js'
 import adminAuth from '../middlewares/adminAuth.js'
-import { addCategory, loadAllCategory, loadEditCategory, toggleCategoryStatus, updateCategory } from '../controllers/categoryController.js'
-import { addSubCategory, loadAllSubcategory, loadEditSubcategory, toggleSubcategoryStatus, updateSubcategory } from '../controllers/subCategoryController.js'
+import { addCategory, deleteCategory, loadAllCategory, loadEditCategory, toggleCategoryStatus, updateCategory } from '../controllers/categoryController.js'
+import { addSubCategory, deleteSubCategory, loadAllSubcategory, loadEditSubcategory, toggleSubcategoryStatus, updateSubcategory } from '../controllers/subCategoryController.js'
 
 const adminRouter = express.Router()
 
@@ -17,5 +17,7 @@ adminRouter.post('/edit-category/:categoryId', adminAuth, updateCategory)
 adminRouter.get('/getEditCategory/:categoryId', adminAuth, loadEditCategory)
 adminRouter.get('/getEditSubcategory/:subCategoryId', adminAuth, loadEditSubcategory)
 adminRouter.post('/edit-subCategory/:subCategoryId', adminAuth, updateSubcategory)
+adminRouter.post('/delete-category/:categoryId', adminAuth, deleteCategory)
+adminRouter.post('/delete-subCategory/:subCategoryId', adminAuth, deleteSubCategory)
 
 export default adminRouter

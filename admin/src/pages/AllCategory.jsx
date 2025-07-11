@@ -6,6 +6,7 @@ import axios from 'axios'
 import { FaPencilAlt } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
 import { useNavigate } from 'react-router-dom'
+import DeleteConfirm from '../components/DeleteConfirm'
 
 const AllCategory = () => {
 
@@ -48,6 +49,22 @@ const AllCategory = () => {
     const handleEditCategory = (categoryId) => {
       navigate(`/edit-category/${categoryId}`)
     }
+
+    const handleDeleteCategory = async (categoryId, categoryName) => {
+      try {
+        const confirmed = await DeleteConfirm(`Delete category ${categoryName} ?`)
+        if(!confirmed) return
+
+        const {data} = await axios.post(`${backendUrl}/api/admin/delete-category/${categoryId}`, {}, {headers:{aToken}})
+        if(data.success){
+          alert(data.message)
+          setAllCategory(prev => prev.filter(c => c._id !== categoryId))
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    
   return (
     <div>
       <div className="flex">
@@ -89,7 +106,7 @@ const AllCategory = () => {
                                         <a href="" onClick={() => handleEditCategory(category._id)} className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white mr-3'>
                                             <FaPencilAlt size={14} />
                                         </a>
-                                        <a href="" className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a] hover:text-white'>
+                                        <a href="" onClick={(e) => {e.preventDefault(); handleDeleteCategory(category._id, category.categoryName)}} className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a] hover:text-white'>
                                             <ImBin size={14} />
                                         </a>
                                     </td>

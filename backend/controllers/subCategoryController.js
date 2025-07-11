@@ -138,10 +138,21 @@ const updateSubcategory = async (req, res) => {
     }
 }
 
+const deleteSubCategory = async (req, res) => {
+    try {
+        const {subCategoryId} = req.params
+        await subCategoryModel.findByIdAndDelete(subCategoryId)
+        res.status(200).json({success:true, message:'Subcategory deleted successfylly'})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
     addSubCategory,
     loadAllSubcategory,
     toggleSubcategoryStatus,
     loadEditSubcategory,
-    updateSubcategory
+    updateSubcategory,
+    deleteSubCategory
 }

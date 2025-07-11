@@ -6,6 +6,7 @@ import { ImBin } from "react-icons/im";
 import { AdminContext } from '../context/AdminContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import DeleteConfirm from '../components/DeleteConfirm';
 
 const AllSubCategory = () => {
 
@@ -49,6 +50,21 @@ const AllSubCategory = () => {
   const handleEditSubcategory = (subCategoryId) => {
     navigate(`/edit-subCategory/${subCategoryId}`)
   }
+
+  const handleDeleteSubcategory = async (subCategoryId, subCategoryName) => {
+    try {
+      const confirmed = await DeleteConfirm(`Delete subcategory ${subCategoryName} ?`)
+      if(!confirmed) return
+
+      const {data} = await axios.post(`${backendUrl}/api/admin/delete-subCategory/${subCategoryId}`, {}, {headers:{aToken}})
+      if(data.success){
+        alert(data.message)
+        setAllSubcategories(prev => prev.filter(s => s._id !== subCategoryId))
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
   return (
     <div>
@@ -87,7 +103,7 @@ const AllSubCategory = () => {
                                       <a href="" onClick={() => handleEditSubcategory(subCategory._id)} className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#3b82f6] text-[#3b82f6] hover:bg-[#3b82f6] hover:text-white mr-3'>
                                           <FaPencilAlt size={14} />
                                       </a>
-                                      <a href="" className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a] hover:text-white'>
+                                      <a href="" onClick={(e) => {e.preventDefault(); handleDeleteSubcategory(subCategory._id, subCategory.subCategoryName)}} className='inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#fc424a] text-[#fc424a] hover:bg-[#fc424a] hover:text-white'>
                                           <ImBin size={14} />
                                       </a>
                                   </td>

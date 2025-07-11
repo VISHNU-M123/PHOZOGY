@@ -112,10 +112,21 @@ const loadEditCategory = async (req, res) => {
     }
 }
 
+const deleteCategory = async (req, res) => {
+    try {
+        const {categoryId} = req.params
+        await categoryModel.findByIdAndDelete(categoryId)
+        res.status(200).json({success:true, message:'Category deleted successfylly'})
+    } catch (error) {
+        res.status(500).json({success:false, message:error.message})
+    }
+}
+
 export {
     addCategory,
     loadAllCategory,
     toggleCategoryStatus,
     updateCategory,
-    loadEditCategory
+    loadEditCategory,
+    deleteCategory
 }
