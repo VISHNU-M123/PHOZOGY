@@ -49,7 +49,7 @@ const addSubCategory = async (req, res) => {
 const loadAllSubcategory = async (req, res) => {
     try {
         const {categoryId} = req.params
-        const subCategories = await subCategoryModel.find({categoryId})
+        const subCategories = await subCategoryModel.find({categoryId}).sort({createdAt: -1})
 
         if(subCategories.length === 0){
             return res.status(404).json({success:false, message:'No Subcategories found for this category'})

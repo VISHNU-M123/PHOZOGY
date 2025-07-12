@@ -38,7 +38,7 @@ const addCategory = async (req, res) => {
 
 const loadAllCategory = async (req, res) => {
     try {
-        const allCategory = await categoryModel.find({})
+        const allCategory = await categoryModel.find({}).sort({createdAt: -1})
         res.json({success:true, allCategory})
     } catch (error) {
         res.status(500).json({success:false, message:error.message})

@@ -119,6 +119,9 @@ const AllCategory = () => {
                   </div>
                 </div>
               </div>
+              <div className='justify-center flex items-center'>
+                <button onClick={() => navigate('/add-subCategory')} className='text-white text-center bg-green-500 px-5 py-2 cursor-pointer rounded-sm'>add new category</button>
+              </div>
             </div>
           </div>
         </div>
