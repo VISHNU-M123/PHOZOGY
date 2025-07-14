@@ -14,11 +14,19 @@ import { IoBarChartSharp } from "react-icons/io5";
 import { MdContacts } from "react-icons/md";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BiSolidFile } from "react-icons/bi";
+import { BiSolidCategory } from "react-icons/bi";
+import { useLocation, useNavigate } from 'react-router-dom';
+
 
 const Sidebar = ({showItems, hideLogoSection = false}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const isActive = (path) => location.pathname === path
 
     useEffect(() => {
         function handleClickOutside(event){
@@ -112,23 +120,28 @@ const Sidebar = ({showItems, hideLogoSection = false}) => {
                     </li>
                 )}
                 <li className={`${showItems ? 'pr-[20px]' : 'p-0'}`}>
-                    <a href="" className='flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0] bg-[#0f1015] relative'>
-                        <div className='absolute left-0 top-0 bg-[#0090e7] w-[3px] h-full'></div>
+                    <a href="" onClick={() => navigate('/')} className={`flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0] ${isActive('/') ? 'bg-[#0f1015]' : ''} relative`}>
+                        {isActive('/') && (
+                            <div className='absolute left-0 top-0 bg-[#0090e7] w-[3px] h-full'></div>
+                        )}
                         <span className='w-[31px] h-[31px] bg-[#6c7293]/20 rounded-full flex items-center justify-center mr-[8px]'>
                             <MdOutlineSpeed className='text-[#8f5fe8]' />
                         </span>
                         {showItems && (
-                            <span className='text-white text-[15px]'>Dashboard</span>
+                            <span className={`${isActive('/') ? 'text-white' : 'text-[#6c7293]'} text-[15px]`}>Dashboard</span>
                         )}
                     </a>
                 </li>
                 <li className={`${showItems ? 'pr-[20px]' : 'p-0'}`}>
-                    <a href="" className='flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0]'>
+                    <a href="" onClick={() => navigate('/all-category')} className={`flex items-center py-[12px] pr-[10px] pl-[20px] rounded-[0_100px_100px_0] ${isActive('/all-category') ? 'bg-[#0f1015]' : ''} relative`}>
+                        {isActive('/all-category') && (
+                            <div className='absolute left-0 top-0 bg-[#0090e7] w-[3px] h-full'></div>
+                        )}
                         <span className='w-[31px] h-[31px] bg-[#6c7293]/20 rounded-full flex items-center justify-center mr-[8px]'>
-                            <MdLaptop className='text-[#ffab00]' />
+                            <BiSolidCategory  className='text-[#ffab00]' />
                         </span>
                         {showItems && (
-                            <span className='text-[#6c7293] text-[15px]'>Basic UI Elements</span>
+                            <span className={`${isActive('/all-category') ? 'text-white' : 'text-[#6c7293]'} text-[15px]`}>Category</span>
                         )}
                     </a>
                 </li>
