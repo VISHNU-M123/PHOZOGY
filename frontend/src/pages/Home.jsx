@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
@@ -30,10 +30,16 @@ import workImg10 from '../assets/pf-10.jpg'
 import workImg11 from '../assets/pf-11.jpg'
 import {Plus} from 'lucide-react'
 import Footer from '../components/Footer';
+import axios from 'axios'
 
 const Home = () => {
 
-  const {token, setToken} = useContext(AppContext)
+  const {token, setToken, backendUrl} = useContext(AppContext)
+  
+  const [categories, setCategories] = useState([])
+  const [subcategories, setSubcategories] = useState([])
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null)
+  
   const navigate = useNavigate()
   
   const logout = () => {
@@ -67,7 +73,7 @@ const Home = () => {
     autoplaySpeed:4000
   }
 
-  const categories = [
+  const categorieswithImg = [
     {
       title: 'WEDDINGS',
       image: categoryImgOne,
@@ -122,6 +128,26 @@ const Home = () => {
   const images = [ workImg1, workImg2, workImg3, workImg4, workImg5, workImg6, workImg7, workImg8, workImg9, workImg10, workImg11]
   const [lightBoxImg, setLightBoxImg] = useState(null)
 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const {data} = await axios.get(`${backendUrl}/api/user/`, {headers:{token}})
+        if(data.success){
+          setCategories(data.categories)
+        }
+      } catch (error) {
+        console.log('Failed to fetch categories',error)
+      }
+    }
+    fetchCategories()
+  },[backendUrl, token])
+
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategoryId(categoryId)
+    const selectedCategory = categories.find(cat => cat._id === categoryId)
+    setSubcategories(selectedCategory.subcategory || [])
+  }
+
   return (
     <div className="w-full overflow-x-hidden">
       <Navbar/>
@@ -160,7 +186,7 @@ const Home = () => {
       
       <div className='px-3 sm:px-5 lg:px-9 xl:max-w-7xl xl:mx-auto'>
         <Slider {...categorySettings}>
-          {categories.map((category, index) => (
+          {categorieswithImg.map((category, index) => (
             <div key={index} className='px-3'>
               <CategoryCard title={category.title} image={category.image} count={category.count}/>
             </div>
@@ -171,13 +197,18 @@ const Home = () => {
       <div className='px-6 sm:px-8 lg:px-12 xl:max-w-7xl xl:mx-auto pt-20'>
         <h1 className='text-center font-[700] text-[36px] text-[#111111]'>OUR LATEST WORKS</h1>
         <ul className="flex flex-wrap justify-center mt-4">
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>All</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Weddings</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Engagements</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Bridal Showers</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8'>Haldi</li>
-          <li className='text-[#888888] text-[17px] px-1.5 md:px-6 '>Videos</li>
+          <li onClick={() => {setSelectedCategoryId(null); setSubcategories([])}} className={`${!selectedCategoryId ? 'text-green-600' : 'text-[#888888]'} text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8 cursor-pointer`}>All</li>
+          {categories.map(category => (
+            <li key={category._id} onClick={() => handleCategoryClick(category._id)} className={`${selectedCategoryId === category._id ? 'text-green-600' : 'text-[#888888]'} text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8 cursor-pointer`}>{category.categoryName}</li>
+          ))}
         </ul>
+        {subcategories.length > 0 && (
+          <ul className="flex flex-wrap justify-center mt-4">
+            {subcategories.map(sub => (
+              <li key={sub._id} className='text-[#888888] text-[17px] px-1.5 md:px-6 border-r border-[#ccc] pr-1.5 md:pl-8 cursor-pointer'>{sub.subCategoryName}</li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className='pt-5 md:pt-10 '>
